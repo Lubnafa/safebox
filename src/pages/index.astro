@@ -1,0 +1,50 @@
+---
+// SafeBox Marketing Site - Homepage
+import Hero from '../components/Hero.astro';
+import WhySafeBox from '../components/WhySafeBox.astro';
+import WhatIsSafeBox from '../components/WhatIsSafeBox.astro';
+import HowItWorks from '../components/HowItWorks.astro';
+import BuiltForRealLife from '../components/BuiltForRealLife.astro';
+import TrustPrivacy from '../components/TrustPrivacy.astro';
+import Founders from '../components/Founders.astro';
+import FAQ from '../components/FAQ.astro';
+import FinalCTAAndFooter from '../components/FinalCTAAndFooter.astro';
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="SafeBox - The private voice assistant you can trust" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>SafeBox - Private Voice Assistant</title>
+    <!-- Google Fonts Preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@1,400;1,500;1,600;1,700&display=swap" rel="stylesheet" />
+  </head>
+  <body class="bg-white text-gray-900 antialiased">
+    <Hero />
+    <WhySafeBox />
+    <WhatIsSafeBox />
+    <HowItWorks />
+    <BuiltForRealLife />
+    <TrustPrivacy />
+    <Founders />
+    <FAQ />
+    <FinalCTAAndFooter />
+  </body>
+</html>
+
+<style>
+  @tailwind base;
+  @tailwind components;
+  @tailwind utilities;
+</style>
+
+<style>
+  @import '../styles/global.css';
+</style>

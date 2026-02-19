@@ -1,0 +1,155 @@
+---
+// WhySafeBox component - Value proposition cards section
+import FancyHeading from './FancyHeading.astro';
+---
+
+<section 
+  class="why-safebox py-20 md:py-24 lg:py-32 bg-white"
+  aria-labelledby="why-safebox"
+>
+  <div class="container mx-auto px-6 md:px-12 lg:px-16">
+    <!-- Section Header -->
+    <div class="text-center mb-12 md:mb-16">
+      <FancyHeading 
+        as="h2"
+        id="why-safebox"
+        text="Why people choose SafeBox"
+        class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4"
+      />
+      <p class="text-lg md:text-xl text-gray-700 max-w-2xl mx-auto leading-relaxed">
+        Most assistants sound confident. SafeBox is designed to be reliable.
+      </p>
+    </div>
+
+    <!-- Cards Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+      <!-- Card 1: Honest by default -->
+      <div 
+        class="why-card bg-white rounded-xl border border-gray-200 p-6 md:p-8 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1"
+        data-reveal-index="0"
+      >
+        <div class="why-card-icon mb-4">
+          <svg 
+            class="w-8 h-8 text-gray-700 transition-transform duration-300"
+            fill="none" 
+            stroke="currentColor" 
+            viewBox="0 0 24 24"
+          >
+            <path 
+              stroke-linecap="round" 
+              stroke-linejoin="round" 
+              stroke-width="1.5" 
+              d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+            />
+          </svg>
+        </div>
+        <h3 class="text-xl font-semibold text-gray-900 mb-3">
+          Honest by default
+        </h3>
+        <p class="text-gray-700 leading-relaxed">
+          If SafeBox doesn't know, it says so, clearly. No pretending.
+        </p>
+      </div>
+
+      <!-- Card 2: Stays consistent -->
+      <div 
+        class="why-card bg-white rounded-xl border border-gray-200 p-6 md:p-8 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1"
+        data-reveal-index="1"
+      >
+        <div class="why-card-icon mb-4">
+          <svg 
+            class="w-8 h-8 text-gray-700 transition-transform duration-300"
+            fill="none" 
+            stroke="currentColor" 
+            viewBox="0 0 24 24"
+          >
+            <path 
+              stroke-linecap="round" 
+              stroke-linejoin="round" 
+              stroke-width="1.5" 
+              d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"
+            />
+          </svg>
+        </div>
+        <h3 class="text-xl font-semibold text-gray-900 mb-3">
+          Stays consistent
+        </h3>
+        <p class="text-gray-700 leading-relaxed">
+          Same tone, same rules, same experience. It doesn't drift day to day.
+        </p>
+      </div>
+
+      <!-- Card 3: Less babysitting -->
+      <div 
+        class="why-card bg-white rounded-xl border border-gray-200 p-6 md:p-8 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1"
+        data-reveal-index="2"
+      >
+        <div class="why-card-icon mb-4">
+          <svg 
+            class="w-8 h-8 text-gray-700 transition-transform duration-300"
+            fill="none" 
+            stroke="currentColor" 
+            viewBox="0 0 24 24"
+          >
+            <path 
+              stroke-linecap="round" 
+              stroke-linejoin="round" 
+              stroke-width="1.5" 
+              d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"
+            />
+          </svg>
+        </div>
+        <h3 class="text-xl font-semibold text-gray-900 mb-3">
+          Less babysitting
+        </h3>
+        <p class="text-gray-700 leading-relaxed">
+          You shouldn't have to double check everything or rewrite prompts 10 times.
+        </p>
+      </div>
+
+      <!-- Card 4: Built for real responsibility -->
+      <div 
+        class="why-card bg-white rounded-xl border border-gray-200 p-6 md:p-8 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1"
+        data-reveal-index="3"
+      >
+        <div class="why-card-icon mb-4">
+          <svg 
+            class="w-8 h-8 text-gray-700 transition-transform duration-300"
+            fill="none" 
+            stroke="currentColor" 
+            viewBox="0 0 24 24"
+          >
+            <path 
+              stroke-linecap="round" 
+              stroke-linejoin="round" 
+              stroke-width="1.5" 
+              d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+            />
+          </svg>
+        </div>
+        <h3 class="text-xl font-semibold text-gray-900 mb-3">
+          Built for real responsibility
+        </h3>
+        <p class="text-gray-700 leading-relaxed">
+          Great for home life, running a small business, and power users who live in GPT.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  @import '../styles/sections.css';
+</style>
+
+<script>
+  import { initRevealOnScroll } from '../scripts/revealOnScroll';
+  
+  if (typeof window !== 'undefined') {
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initRevealOnScroll);
+    } else {
+      initRevealOnScroll();
+    }
+  }
+</script>

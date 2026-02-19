@@ -1,0 +1,135 @@
+---
+// Hero component for SafeBox marketing site
+---
+
+<section 
+  class="hero relative min-h-screen flex items-center overflow-hidden bg-white"
+  id="hero"
+>
+  <!-- Half white background effect -->
+  <div class="hero-background absolute inset-0 pointer-events-none">
+    <div class="hero-background-left absolute inset-y-0 left-0 w-1/2 bg-white"></div>
+    <div class="hero-background-right absolute inset-y-0 right-0 w-1/2 bg-gradient-to-br from-gray-50 to-gray-100"></div>
+  </div>
+
+  <!-- Soft shapes for parallax -->
+  <div class="hero-shapes absolute inset-0 pointer-events-none overflow-hidden">
+    <div 
+      class="hero-shape hero-shape-1 absolute w-96 h-96 rounded-full blur-3xl opacity-10"
+      style="background: linear-gradient(135deg, #9ca3af 0%, #6b7280 100%);"
+    ></div>
+    <div 
+      class="hero-shape hero-shape-2 absolute w-80 h-80 rounded-full blur-3xl opacity-10"
+      style="background: linear-gradient(225deg, #d1d5db 0%, #9ca3af 100%);"
+    ></div>
+  </div>
+
+  <div class="container mx-auto px-6 md:px-12 lg:px-16 relative z-10">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center py-20 lg:py-32">
+      
+      <!-- Left Column: Content -->
+      <div class="hero-content space-y-8">
+        <!-- Logo -->
+        <div 
+          class="hero-logo"
+          data-animate="logo"
+        >
+          <h1 class="text-2xl md:text-3xl font-bold text-gray-900 tracking-tight">
+            SafeBox
+          </h1>
+        </div>
+
+        <!-- Headline -->
+        <h2 
+          class="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight"
+          data-animate="headline"
+        >
+          Meet SafeBox — the private voice assistant you can trust.
+        </h2>
+
+        <!-- Subhead -->
+        <p 
+          class="text-lg md:text-xl text-gray-700 leading-relaxed max-w-2xl"
+          data-animate="subhead"
+        >
+          SafeBox helps you get things done without turning you into a prompt engineer. It stays consistent, keeps your info under your control, and tells you when something is unavailable.
+        </p>
+
+        <!-- CTAs -->
+        <div 
+          class="flex flex-col sm:flex-row gap-4"
+          data-animate="cta"
+        >
+          <a 
+            href="#get-safebox"
+            class="hero-cta-primary inline-flex items-center justify-center px-8 py-4 bg-gray-900 text-white font-medium rounded-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-gray-900 focus:ring-offset-2"
+          >
+            Get SafeBox
+          </a>
+          <a 
+            href="#demo"
+            class="hero-cta-secondary inline-flex items-center justify-center px-8 py-4 bg-white text-gray-900 font-medium rounded-lg border-2 border-gray-300 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 hover:border-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-900 focus:ring-offset-2"
+          >
+            Watch the 60-sec demo
+          </a>
+        </div>
+
+        <!-- Trust line -->
+        <p 
+          class="text-sm text-gray-600"
+          data-animate="trust"
+        >
+          No ads. No data resale. No weird surprises.
+        </p>
+      </div>
+
+      <!-- Right Column: Product Mock -->
+      <div 
+        class="hero-mock relative flex items-center justify-center min-h-[400px] lg:min-h-[500px]"
+        data-animate="mock"
+      >
+        <!-- Main device card -->
+        <div class="hero-device relative z-10 w-64 md:w-80 h-80 md:h-96 bg-white rounded-2xl shadow-2xl flex items-center justify-center border border-gray-200">
+          <div class="text-center p-8">
+            <div class="w-16 h-16 mx-auto mb-4 bg-gray-900 rounded-full flex items-center justify-center">
+              <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"></path>
+              </svg>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-900">SafeBox</h3>
+          </div>
+        </div>
+
+        <!-- Floating mini-cards -->
+        <div class="hero-floating-cards absolute inset-0 pointer-events-none">
+          <div class="hero-card hero-card-1 absolute top-10 left-4 md:left-8 w-24 h-24 md:w-32 md:h-32 bg-white rounded-xl shadow-lg flex items-center justify-center border border-gray-200">
+            <span class="text-xs md:text-sm font-medium text-gray-900 text-center px-2">Consistent</span>
+          </div>
+          <div class="hero-card hero-card-2 absolute bottom-20 right-4 md:right-8 w-24 h-24 md:w-32 md:h-32 bg-white rounded-xl shadow-lg flex items-center justify-center border border-gray-200">
+            <span class="text-xs md:text-sm font-medium text-gray-900 text-center px-2">Private</span>
+          </div>
+          <div class="hero-card hero-card-3 absolute top-1/2 right-0 md:right-12 w-24 h-24 md:w-32 md:h-32 bg-white rounded-xl shadow-lg flex items-center justify-center border border-gray-200">
+            <span class="text-xs md:text-sm font-medium text-gray-900 text-center px-2">Offline-aware</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  @import '../styles/hero.css';
+</style>
+
+<script>
+  import { initHeroMotion } from '../scripts/heroMotion';
+  
+  // Initialize hero animations and parallax after DOM is ready
+  if (typeof window !== 'undefined') {
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initHeroMotion);
+    } else {
+      initHeroMotion();
+    }
+  }
+</script>

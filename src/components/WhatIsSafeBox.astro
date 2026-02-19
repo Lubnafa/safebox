@@ -1,0 +1,136 @@
+---
+// WhatIsSafeBox component - Plain-English explanation section
+import FancyHeading from './FancyHeading.astro';
+---
+
+<section 
+  class="what-is-safebox py-20 md:py-24 lg:py-32 bg-white"
+  aria-labelledby="what-is-safebox"
+>
+  <div class="container mx-auto px-6 md:px-12 lg:px-16">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+      
+      <!-- Left Column: Content -->
+      <div class="what-is-content space-y-6">
+        <!-- Title -->
+        <div data-reveal>
+          <FancyHeading 
+            as="h2"
+            id="what-is-safebox"
+            text="So… what is SafeBox?"
+            class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900"
+          />
+        </div>
+
+        <!-- Body Copy -->
+        <div class="space-y-4" data-reveal>
+          <p class="text-lg md:text-xl text-gray-700 leading-relaxed">
+            SafeBox is a small device and service that gives you a calmer, more trustworthy assistant.
+          </p>
+          <p class="text-lg md:text-xl text-gray-700 leading-relaxed">
+            You talk to it like a normal person. It helps you organize life, remember what matters, and get clear answers, without taking control away from you.
+          </p>
+        </div>
+
+        <!-- Bullets Section -->
+        <div class="what-is-bullets mt-8">
+          <p class="text-sm font-medium text-gray-600 mb-4" data-reveal>
+            What it's great for
+          </p>
+          <ul 
+            class="space-y-3"
+            data-reveal="stagger"
+          >
+            <li 
+              class="text-gray-700 leading-relaxed flex items-start"
+              data-index="0"
+            >
+              <span class="text-gray-400 mr-3 mt-1">•</span>
+              <span>Keeping home and work organized in one place</span>
+            </li>
+            <li 
+              class="text-gray-700 leading-relaxed flex items-start"
+              data-index="1"
+            >
+              <span class="text-gray-400 mr-3 mt-1">•</span>
+              <span>Getting answers you can rely on</span>
+            </li>
+            <li 
+              class="text-gray-700 leading-relaxed flex items-start"
+              data-index="2"
+            >
+              <span class="text-gray-400 mr-3 mt-1">•</span>
+              <span>Helping even when Wi-Fi goes down</span>
+            </li>
+            <li 
+              class="text-gray-700 leading-relaxed flex items-start"
+              data-index="3"
+            >
+              <span class="text-gray-400 mr-3 mt-1">•</span>
+              <span>Storing the things you don't want floating around the internet</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- One-liner Summary -->
+        <p 
+          class="text-xl md:text-2xl font-medium text-gray-900 mt-8"
+          data-reveal
+        >
+          SafeBox is built for trust first, then power.
+        </p>
+      </div>
+
+      <!-- Right Column: Device Visual with Orbiting Cards -->
+      <div class="what-is-visual relative flex items-center justify-center min-h-[400px] lg:min-h-[500px]">
+        <!-- Orbit Container -->
+        <div class="orbit-container relative w-full h-full flex items-center justify-center">
+          <!-- Center Device Card -->
+          <div class="what-is-device relative z-10 w-48 h-48 md:w-56 md:h-56 bg-white rounded-2xl shadow-lg flex items-center justify-center border border-gray-200">
+            <div class="text-center p-6">
+              <h3 class="text-2xl font-bold text-gray-900">SafeBox</h3>
+            </div>
+          </div>
+
+          <!-- Orbiting Feature Cards -->
+          <div class="orbit-chip orbit-chip-1 absolute">
+            <div class="what-is-chip bg-white rounded-lg px-4 py-2 shadow-md border border-gray-200 text-sm font-medium text-gray-900 whitespace-nowrap">
+              Trust-first
+            </div>
+          </div>
+          <div class="orbit-chip orbit-chip-2 absolute">
+            <div class="what-is-chip bg-white rounded-lg px-4 py-2 shadow-md border border-gray-200 text-sm font-medium text-gray-900 whitespace-nowrap">
+              Clear answers
+            </div>
+          </div>
+          <div class="orbit-chip orbit-chip-3 absolute">
+            <div class="what-is-chip bg-white rounded-lg px-4 py-2 shadow-md border border-gray-200 text-sm font-medium text-gray-900 whitespace-nowrap">
+              Under your control
+            </div>
+          </div>
+          <div class="orbit-chip orbit-chip-4 absolute">
+            <div class="what-is-chip bg-white rounded-lg px-4 py-2 shadow-md border border-gray-200 text-sm font-medium text-gray-900 whitespace-nowrap">
+              Offline-aware
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  @import '../styles/sections.css';
+</style>
+
+<script>
+  import { initRevealOnScroll } from '../scripts/revealOnScroll';
+  
+  if (typeof window !== 'undefined') {
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initRevealOnScroll);
+    } else {
+      initRevealOnScroll();
+    }
+  }
+</script>

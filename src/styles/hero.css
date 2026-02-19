@@ -1,0 +1,185 @@
+/* Hero Component Styles */
+
+.hero {
+  --px: 0px;
+  --py: 0px;
+}
+
+/* Animation states - elements start hidden/transformed */
+.hero[data-animate-ready="false"] .hero-logo,
+.hero[data-animate-ready="false"] [data-animate="logo"] {
+  opacity: 0;
+}
+
+.hero[data-animate-ready="false"] [data-animate="headline"] {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.hero[data-animate-ready="false"] [data-animate="subhead"] {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.hero[data-animate-ready="false"] [data-animate="cta"] {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.hero[data-animate-ready="false"] [data-animate="trust"] {
+  opacity: 0;
+}
+
+.hero[data-animate-ready="false"] [data-animate="mock"] {
+  opacity: 0;
+}
+
+/* Transition to visible state */
+.hero[data-animate-ready="true"] .hero-logo,
+.hero[data-animate-ready="true"] [data-animate="logo"] {
+  opacity: 1;
+  transition: opacity 0.8s ease-out;
+}
+
+.hero[data-animate-ready="true"] [data-animate="headline"] {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.8s ease-out 0.2s, transform 0.8s ease-out 0.2s;
+}
+
+.hero[data-animate-ready="true"] [data-animate="subhead"] {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.8s ease-out 0.4s, transform 0.8s ease-out 0.4s;
+}
+
+.hero[data-animate-ready="true"] [data-animate="cta"] {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.8s ease-out 0.6s, transform 0.8s ease-out 0.6s;
+}
+
+.hero[data-animate-ready="true"] [data-animate="trust"] {
+  opacity: 1;
+  transition: opacity 0.8s ease-out 0.8s;
+}
+
+.hero[data-animate-ready="true"] [data-animate="mock"] {
+  opacity: 1;
+  transition: opacity 1s ease-out 0.3s;
+}
+
+/* Parallax transforms for shapes and cards */
+.hero-shape-1 {
+  top: 10%;
+  left: 60%;
+  transform: translate(
+    calc(var(--px) * 0.3),
+    calc(var(--py) * 0.3)
+  );
+  transition: transform 0.1s ease-out;
+}
+
+.hero-shape-2 {
+  bottom: 20%;
+  right: 20%;
+  transform: translate(
+    calc(var(--px) * -0.2),
+    calc(var(--py) * -0.2)
+  );
+  transition: transform 0.1s ease-out;
+}
+
+.hero-card-1 {
+  transform: translate(
+    calc(var(--px) * 0.15),
+    calc(var(--py) * 0.15)
+  );
+  transition: transform 0.1s ease-out;
+}
+
+.hero-card-2 {
+  transform: translate(
+    calc(var(--px) * -0.1),
+    calc(var(--py) * -0.1)
+  );
+  transition: transform 0.1s ease-out;
+}
+
+.hero-card-3 {
+  transform: translate(
+    calc(var(--px) * 0.12),
+    calc(var(--py) * -0.12)
+  );
+  transition: transform 0.1s ease-out;
+}
+
+/* Primary CTA shimmer effect on hover */
+.hero-cta-primary {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-cta-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: left 0.5s ease;
+}
+
+.hero-cta-primary:hover::before {
+  left: 100%;
+}
+
+/* Mobile: Adjust background to top white, bottom tinted */
+@media (max-width: 1023px) {
+  .hero-background-left {
+    width: 100%;
+    height: 50%;
+    top: 0;
+  }
+  
+  .hero-background-right {
+    width: 100%;
+    height: 50%;
+    bottom: 0;
+    top: auto;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .hero[data-animate-ready="false"] [data-animate],
+  .hero[data-animate-ready="true"] [data-animate] {
+    transition: none;
+    transform: none;
+    opacity: 1;
+  }
+  
+  .hero-shape-1,
+  .hero-shape-2,
+  .hero-card-1,
+  .hero-card-2,
+  .hero-card-3 {
+    transform: none;
+    transition: none;
+  }
+  
+  .hero-cta-primary,
+  .hero-cta-secondary {
+    transition: none;
+  }
+  
+  .hero-cta-primary::before {
+    display: none;
+  }
+}

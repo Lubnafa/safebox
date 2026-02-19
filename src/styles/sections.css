@@ -1,0 +1,728 @@
+/* Sections Styles - WhySafeBox and other sections */
+
+/* WhySafeBox Card Reveal Animation */
+.why-card {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.why-card.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger delay based on data-reveal-index */
+.why-card[data-reveal-index="0"].is-visible {
+  transition-delay: 0s;
+}
+
+.why-card[data-reveal-index="1"].is-visible {
+  transition-delay: 0.1s;
+}
+
+.why-card[data-reveal-index="2"].is-visible {
+  transition-delay: 0.2s;
+}
+
+.why-card[data-reveal-index="3"].is-visible {
+  transition-delay: 0.3s;
+}
+
+/* Hover interactions for cards */
+.why-card:hover .why-card-icon svg {
+  transform: scale(1.1) rotate(2deg);
+}
+
+/* WhatIsSafeBox Reveal Animation */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+[data-reveal].is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Staggered list items */
+[data-reveal="stagger"] li[data-index] {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+[data-reveal="stagger"] li[data-index="0"].is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0s;
+}
+
+[data-reveal="stagger"] li[data-index="1"].is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.1s;
+}
+
+[data-reveal="stagger"] li[data-index="2"].is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.2s;
+}
+
+[data-reveal="stagger"] li[data-index="3"].is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.3s;
+}
+
+/* Orbit Animation Variables */
+.orbit-container {
+  --orbit-radius: 180px;
+  --orbit-duration: 20s;
+}
+
+@media (min-width: 768px) {
+  .orbit-container {
+    --orbit-radius: 220px;
+  }
+}
+
+/* Orbit Chip Positioning and Animation */
+.orbit-chip {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transform-origin: center center;
+  animation: orbit var(--orbit-duration) linear infinite;
+}
+
+.orbit-chip-1 {
+  animation-delay: 0s;
+}
+
+.orbit-chip-2 {
+  animation-delay: -5s;
+}
+
+.orbit-chip-3 {
+  animation-delay: -10s;
+}
+
+.orbit-chip-4 {
+  animation-delay: -15s;
+}
+
+/* Orbit Keyframes - rotate around center, translate outward, counter-rotate for text */
+@keyframes orbit {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg) translateX(var(--orbit-radius)) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg) translateX(var(--orbit-radius)) rotate(-360deg);
+  }
+}
+
+/* HowItWorks Timeline Styles */
+.how-it-works-step {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.how-it-works-step.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger delay for steps */
+.how-it-works-step[data-reveal-index="0"].is-visible {
+  transition-delay: 0.2s;
+}
+
+.how-it-works-step[data-reveal-index="1"].is-visible {
+  transition-delay: 0.4s;
+}
+
+.how-it-works-step[data-reveal-index="2"].is-visible {
+  transition-delay: 0.6s;
+}
+
+/* Timeline Line Draw Animation */
+.timeline-line-fill {
+  transform: scaleX(0);
+  transition: transform 1.2s ease-out;
+}
+
+[data-line-draw].is-visible .timeline-line-fill {
+  transform: scaleX(1);
+}
+
+/* Mobile: Show vertical layout with connector line */
+@media (max-width: 767px) {
+  .how-it-works-steps {
+    gap: 2rem;
+  }
+  
+  /* Vertical connector line on mobile */
+  .how-it-works-steps::before {
+    content: '';
+    position: absolute;
+    left: 1.5rem;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, 
+      transparent 0%, 
+      transparent 10%, 
+      #d1d5db 10%, 
+      #d1d5db 90%, 
+      transparent 90%, 
+      transparent 100%);
+    z-index: 0;
+  }
+  
+  .step-badge {
+    position: relative;
+    z-index: 10;
+  }
+}
+
+/* Desktop: Show horizontal timeline */
+@media (min-width: 768px) {
+  .how-it-works-steps {
+    padding-top: 3.5rem;
+  }
+  
+  /* Position badges on the timeline */
+  .how-it-works-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .step-content {
+    width: 100%;
+  }
+}
+
+/* Icon Hover Micro-motion */
+.step-icon:hover svg {
+  transform: translateY(-3px);
+}
+
+/* BuiltForRealLife Tab Styles */
+.built-for-tabs {
+  position: relative;
+  border-bottom: 1px solid #e5e7eb;
+  padding-bottom: 0.5rem;
+}
+
+.built-for-tab {
+  position: relative;
+  z-index: 1;
+  transition: transform 0.2s ease-out;
+  border: none;
+  background: none;
+  outline: none;
+}
+
+.built-for-tab:hover:not([aria-selected="true"]) {
+  transform: translateY(-2px);
+}
+
+.built-for-tab[aria-selected="true"] {
+  color: #111827;
+  font-weight: 600;
+}
+
+.built-for-tab-underline {
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #111827;
+  transition: left 0.3s ease-out, width 0.3s ease-out;
+}
+
+/* Panel Transition Styles */
+.built-for-panel {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+}
+
+.built-for-panel:not(.active) {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  transform: translateY(10px);
+  pointer-events: none;
+  visibility: hidden;
+}
+
+.built-for-panel.active {
+  position: relative;
+  visibility: visible;
+}
+
+.built-for-panels {
+  position: relative;
+}
+
+/* TrustPrivacy Receipt Card Styles */
+.receipt-container {
+  position: relative;
+}
+
+@media (min-width: 1024px) {
+  .receipt-container {
+    position: sticky;
+    top: 2rem;
+  }
+}
+
+.receipt-toggle {
+  display: flex;
+  justify-content: center;
+}
+
+.receipt-toggle-btn {
+  cursor: pointer;
+}
+
+.receipt-toggle-btn.active {
+  background-color: #111827;
+  color: #ffffff;
+  border-color: #111827;
+}
+
+.receipt-card {
+  font-family: 'Courier New', monospace;
+  max-width: 100%;
+  background-color: #fefefe;
+  border-color: #d1d5db;
+}
+
+.receipt-card.is-not-saved {
+  background-color: #f9fafb;
+}
+
+.receipt-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+}
+
+.receipt-label {
+  font-weight: 500;
+}
+
+.receipt-value {
+  word-break: break-word;
+}
+
+.receipt-field-saved {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+}
+
+.receipt-field-saved.is-hidden {
+  opacity: 0.3;
+  transform: translateY(-2px);
+}
+
+.receipt-field-status {
+  font-weight: 500;
+}
+
+/* Store List Cards */
+.store-list-card {
+  padding: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .store-list-card {
+    padding: 2rem;
+    background-color: #f9fafb;
+    border-radius: 0.75rem;
+    border: 1px solid #e5e7eb;
+  }
+}
+
+/* Founders Premium Section Styles */
+.founders-panel {
+  background-color: #ffffff;
+}
+
+/* Founder Profile Block Styles */
+.founder-profile-block {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out, box-shadow 0.3s ease-out;
+}
+
+.founder-profile-block.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger delay for founder profile blocks */
+.founder-profile-block[data-reveal-index="0"].is-visible {
+  transition-delay: 0s;
+}
+
+.founder-profile-block[data-reveal-index="4"].is-visible {
+  transition-delay: 0.2s;
+}
+
+/* Hover effects for founder profile blocks */
+.founder-profile-block:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+}
+
+/* Founder Mini Card Styles */
+.founder-mini-card {
+  opacity: 0;
+  transform: translateY(15px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.founder-mini-card.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger delay for mini cards */
+.founder-mini-card[data-reveal-index="1"].is-visible {
+  transition-delay: 0.1s;
+}
+
+.founder-mini-card[data-reveal-index="2"].is-visible {
+  transition-delay: 0.15s;
+}
+
+.founder-mini-card[data-reveal-index="3"].is-visible {
+  transition-delay: 0.2s;
+}
+
+.founder-mini-card[data-reveal-index="5"].is-visible {
+  transition-delay: 0.25s;
+}
+
+.founder-mini-card[data-reveal-index="6"].is-visible {
+  transition-delay: 0.3s;
+}
+
+/* Logo Pill Styles */
+.logo-pill {
+  transition: opacity 0.2s ease-out;
+}
+
+.logo-pill:hover {
+  opacity: 0.8;
+}
+
+/* Value Chip Styles */
+.value-chip {
+  transition: background-color 0.2s ease-out;
+}
+
+.value-chip:hover {
+  background-color: #f3f4f6;
+}
+
+/* FAQ Accordion Styles */
+.faq-answer-wrapper {
+  max-height: 0;
+  opacity: 0;
+  transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+}
+
+.faq-answer-wrapper.is-open {
+  max-height: 500px;
+  opacity: 1;
+}
+
+.faq-icon {
+  transition: transform 0.2s ease-out;
+}
+
+button.faq-question.is-open .faq-icon {
+  transform: rotate(45deg);
+}
+
+.faq-search-input:focus {
+  border-color: #111827;
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .why-card {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  
+  .why-card:hover .why-card-icon svg {
+    transform: none;
+  }
+  
+  .why-card:hover {
+    transform: none;
+  }
+  
+  [data-reveal] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  
+  [data-reveal="stagger"] li[data-index] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  
+  /* Stop orbit animation, position chips statically at cardinal points */
+  .orbit-chip {
+    animation: none;
+    top: 50%;
+    left: 50%;
+  }
+  
+  .orbit-chip-1 {
+    transform: translate(-50%, calc(-50% - var(--orbit-radius)));
+  }
+  
+  .orbit-chip-2 {
+    transform: translate(calc(-50% + var(--orbit-radius)), -50%);
+  }
+  
+  .orbit-chip-3 {
+    transform: translate(-50%, calc(-50% + var(--orbit-radius)));
+  }
+  
+  .orbit-chip-4 {
+    transform: translate(calc(-50% - var(--orbit-radius)), -50%);
+  }
+  
+  /* HowItWorks reduced motion */
+  .how-it-works-step {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  
+  .timeline-line-fill {
+    transform: scaleX(1);
+    transition: none;
+  }
+  
+  .step-icon:hover svg {
+    transform: none;
+  }
+
+  /* BuiltForRealLife reduced motion */
+  .built-for-tab-underline {
+    transition: none;
+  }
+
+  .built-for-tab:hover:not([aria-selected="true"]) {
+    transform: none;
+  }
+
+  .built-for-panel {
+    transition: none;
+  }
+
+  .built-for-panel:not(.active) {
+    opacity: 0;
+    transform: none;
+  }
+
+  /* TrustPrivacy reduced motion */
+  .receipt-field-saved {
+    transition: opacity 0.2s ease-out;
+  }
+
+  .receipt-field-saved.is-hidden {
+    transform: none;
+  }
+
+  /* Founders reduced motion */
+  .founder-profile-block {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .founder-profile-block:hover {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+
+  .founder-mini-card {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .value-chip:hover {
+    background-color: #f9fafb;
+  }
+
+  .logo-pill:hover {
+    opacity: 1;
+  }
+
+  /* FAQ reduced motion */
+  .faq-answer-wrapper {
+    transition: none;
+  }
+
+  .faq-answer-wrapper.is-open {
+    max-height: none;
+    opacity: 1;
+  }
+
+  .faq-icon {
+    transition: none;
+  }
+
+  .faq-question.is-open .faq-icon {
+    transform: none;
+  }
+}
+
+/* Final CTA Section Styles */
+.final-cta-panel {
+  background-color: #fafafa;
+  border: 1px solid #f3f4f6;
+}
+
+.final-cta-buttons {
+  transition: opacity 0.3s ease-out, max-height 0.3s ease-out, margin-bottom 0.3s ease-out;
+  opacity: 1;
+  max-height: 200px;
+  overflow: hidden;
+}
+
+.final-cta-buttons.is-hidden {
+  opacity: 0;
+  max-height: 0;
+  margin-bottom: 0;
+  pointer-events: none;
+}
+
+.final-cta-form-wrapper {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity 0.3s ease-out, max-height 0.3s ease-out;
+}
+
+.final-cta-form-wrapper.is-visible {
+  opacity: 1;
+  max-height: 200px;
+}
+
+.final-cta-form-wrapper.hidden {
+  display: none;
+}
+
+.final-cta-success.hidden {
+  display: none;
+}
+
+.final-cta-input {
+  background-color: #ffffff;
+}
+
+.final-cta-input:focus {
+  border-color: #111827;
+}
+
+.final-cta-input[aria-invalid="true"] {
+  border-color: #dc2626;
+}
+
+.final-cta-success {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+}
+
+.final-cta-success.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Footer Styles */
+.footer-link {
+  position: relative;
+  display: inline-block;
+}
+
+.footer-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: #111827;
+  transition: width 0.2s ease-out;
+}
+
+.footer-link:hover::after {
+  width: 100%;
+}
+
+/* Reduced motion support for CTA and Footer */
+@media (prefers-reduced-motion: reduce) {
+  .final-cta-buttons {
+    transition: none;
+  }
+
+  .final-cta-buttons.is-hidden {
+    opacity: 0;
+    max-height: 0;
+  }
+
+  .final-cta-form-wrapper {
+    transition: none;
+  }
+
+  .final-cta-form-wrapper.is-visible {
+    opacity: 1;
+    max-height: none;
+  }
+
+  .final-cta-success {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .final-cta-success.is-visible {
+    opacity: 1;
+    transform: none;
+  }
+
+  .footer-link::after {
+    transition: none;
+  }
+
+  .final-cta-primary:hover,
+  .final-cta-secondary:hover,
+  .final-cta-submit:hover {
+    transform: none;
+  }
+}

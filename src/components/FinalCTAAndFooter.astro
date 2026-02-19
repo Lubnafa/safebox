@@ -1,0 +1,226 @@
+---
+// FinalCTAAndFooter component - Final CTA section and Footer
+import FancyHeading from './FancyHeading.astro';
+
+const currentYear = new Date().getFullYear();
+---
+
+<!-- Final CTA Section -->
+<section 
+  class="final-cta py-20 md:py-24 lg:py-32 bg-white"
+  aria-labelledby="final-cta"
+>
+  <div class="container mx-auto px-6 md:px-12 lg:px-16">
+    <div class="final-cta-panel bg-gray-50 rounded-2xl p-8 md:p-12 lg:p-16">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        
+        <!-- Left Column: Heading, Subhead, and Buttons -->
+        <div class="final-cta-content" data-reveal>
+          <FancyHeading 
+            as="h2"
+            id="final-cta"
+            text="Ready for an assistant you can trust?"
+            class="text-3xl md:text-4xl lg:text-5xl font-bold mb-6"
+          />
+          <p class="text-lg md:text-xl text-gray-700 leading-relaxed mb-6">
+            Join the waitlist to see SafeBox in action and get early access updates.
+          </p>
+          
+          <!-- Initial Buttons -->
+          <div class="final-cta-buttons flex flex-col sm:flex-row gap-4">
+            <button
+              type="button"
+              class="final-cta-primary inline-flex items-center justify-center px-8 py-4 bg-gray-900 text-white font-medium rounded-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-gray-900 focus:ring-offset-2"
+              data-waitlist-trigger
+            >
+              Join the waitlist
+            </button>
+            <a
+              href="#pricing"
+              class="final-cta-secondary inline-flex items-center justify-center px-8 py-4 bg-white text-gray-900 font-medium rounded-lg border-2 border-gray-300 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 hover:border-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-900 focus:ring-offset-2"
+            >
+              See pricing
+            </a>
+            <a
+              href="#footer"
+              class="final-cta-tertiary inline-flex items-center justify-center px-8 py-4 bg-transparent text-gray-700 font-medium rounded-lg transition-all duration-300 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-gray-900 focus:ring-offset-2"
+            >
+              Contact
+            </a>
+          </div>
+
+          <!-- Inline Email Form (hidden initially) -->
+          <div class="final-cta-form-wrapper hidden mt-6" data-waitlist-form>
+            <form class="final-cta-form flex flex-col sm:flex-row gap-3" data-waitlist-form-element>
+              <label for="waitlist-email" class="sr-only">Email address</label>
+              <input
+                type="email"
+                id="waitlist-email"
+                name="email"
+                class="final-cta-input flex-1 px-4 py-3 text-base border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent transition-colors"
+                placeholder="you@domain.com"
+                required
+                aria-label="Email address"
+                aria-describedby="waitlist-error"
+              />
+              <button
+                type="submit"
+                class="final-cta-submit inline-flex items-center justify-center px-8 py-3 bg-gray-900 text-white font-medium rounded-lg transition-all duration-300 hover:shadow-lg hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-gray-900 focus:ring-offset-2"
+              >
+                Join
+              </button>
+            </form>
+            <div 
+              id="waitlist-error" 
+              class="final-cta-error hidden mt-2 text-sm text-red-600"
+              role="alert"
+              aria-live="polite"
+            >
+              Please enter a valid email.
+            </div>
+          </div>
+
+          <!-- Success Message (hidden initially) -->
+          <div class="final-cta-success hidden mt-6" data-waitlist-success>
+            <p class="text-lg text-gray-900">
+              You're on the list. We'll be in touch.
+            </p>
+          </div>
+        </div>
+
+        <!-- Right Column: Empty for now, can be used for visual or additional content -->
+        <div class="final-cta-actions" data-reveal>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer Section -->
+<footer 
+  class="footer bg-white border-t border-gray-200 py-12 md:py-16"
+  id="footer"
+>
+  <div class="container mx-auto px-6 md:px-12 lg:px-16">
+    <!-- Footer Columns -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 mb-12">
+      
+      <!-- Column 1: Product -->
+      <div class="footer-column">
+        <h3 class="footer-column-title text-sm font-semibold text-gray-900 uppercase tracking-wide mb-4">
+          Product
+        </h3>
+        <ul class="footer-links space-y-3">
+          <li>
+            <a href="#hero" class="footer-link text-sm text-gray-600 hover:text-gray-900 transition-colors">
+              Overview
+            </a>
+          </li>
+          <li>
+            <a href="#how-it-works" class="footer-link text-sm text-gray-600 hover:text-gray-900 transition-colors">
+              How it works
+            </a>
+          </li>
+          <li>
+            <a href="#trust-privacy" class="footer-link text-sm text-gray-600 hover:text-gray-900 transition-colors">
+              Privacy
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Column 2: Company -->
+      <div class="footer-column">
+        <h3 class="footer-column-title text-sm font-semibold text-gray-900 uppercase tracking-wide mb-4">
+          Company
+        </h3>
+        <ul class="footer-links space-y-3">
+          <li>
+            <a href="#founders" class="footer-link text-sm text-gray-600 hover:text-gray-900 transition-colors">
+              Founders
+            </a>
+          </li>
+          <li>
+            <a href="#footer" class="footer-link text-sm text-gray-600 hover:text-gray-900 transition-colors">
+              Contact
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Column 3: For You -->
+      <div class="footer-column">
+        <h3 class="footer-column-title text-sm font-semibold text-gray-900 uppercase tracking-wide mb-4">
+          For You
+        </h3>
+        <ul class="footer-links space-y-3">
+          <li>
+            <a href="#built-for-real-life" class="footer-link text-sm text-gray-600 hover:text-gray-900 transition-colors">
+              Small Business
+            </a>
+          </li>
+          <li>
+            <a href="#built-for-real-life" class="footer-link text-sm text-gray-600 hover:text-gray-900 transition-colors">
+              Families
+            </a>
+          </li>
+          <li>
+            <a href="#built-for-real-life" class="footer-link text-sm text-gray-600 hover:text-gray-900 transition-colors">
+              Power Users
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Column 4: Legal -->
+      <div class="footer-column">
+        <h3 class="footer-column-title text-sm font-semibold text-gray-900 uppercase tracking-wide mb-4">
+          Legal
+        </h3>
+        <ul class="footer-links space-y-3">
+          <li>
+            <a href="#terms" class="footer-link text-sm text-gray-600 hover:text-gray-900 transition-colors">
+              Terms
+            </a>
+          </li>
+          <li>
+            <a href="#privacy-policy" class="footer-link text-sm text-gray-600 hover:text-gray-900 transition-colors">
+              Privacy Policy
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Footer Bottom Row -->
+    <div class="footer-bottom flex flex-col md:flex-row md:items-center md:justify-between gap-4 pt-8 border-t border-gray-200">
+      <p class="text-sm text-gray-600">
+        © {currentYear} SafeBox. All rights reserved.
+      </p>
+      <p class="text-sm text-gray-600">
+        No ads. No data resale. No weird surprises.
+      </p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  @import '../styles/sections.css';
+</style>
+
+<script>
+  import { initRevealOnScroll } from '../scripts/revealOnScroll';
+  import { initWaitlist } from '../scripts/waitlist';
+  
+  if (typeof window !== 'undefined') {
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', () => {
+        initRevealOnScroll();
+        initWaitlist();
+      });
+    } else {
+      initRevealOnScroll();
+      initWaitlist();
+    }
+  }
+</script>

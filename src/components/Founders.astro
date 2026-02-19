@@ -1,0 +1,366 @@
+---
+// Founders component - Premium SaaS leadership team section
+import FancyHeading from './FancyHeading.astro';
+---
+
+<section 
+  class="founders py-20 md:py-28 lg:py-32 bg-gray-50"
+  aria-labelledby="founders"
+>
+  <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
+    <!-- Section Background Panel -->
+    <div class="founders-panel bg-white rounded-3xl p-8 md:p-12 lg:p-16 shadow-sm">
+      
+      <!-- Top Header -->
+      <div class="founders-header text-center mb-12 md:mb-16" data-reveal>
+        <FancyHeading 
+          as="h2"
+          id="founders"
+          text="Meet the team behind SafeBox"
+          class="text-3xl md:text-4xl lg:text-5xl font-bold mb-4"
+        />
+        <p class="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto">
+          Trust-first systems, built with real-world operational discipline.
+        </p>
+      </div>
+
+      <!-- Navigation Pills -->
+      <div class="founders-nav flex justify-center gap-3 mb-12 md:mb-16" data-reveal>
+        <a 
+          href="#zac-bragg"
+          class="founder-nav-pill px-6 py-2.5 text-sm font-medium rounded-full border border-gray-300 bg-white text-gray-700 hover:bg-gray-50 hover:border-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-900 focus:ring-offset-2 transition-colors"
+        >
+          Founder
+        </a>
+        <a 
+          href="#lubna-fatima"
+          class="founder-nav-pill px-6 py-2.5 text-sm font-medium rounded-full border border-gray-300 bg-white text-gray-700 hover:bg-gray-50 hover:border-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-900 focus:ring-offset-2 transition-colors"
+        >
+          Foundational AI Engineer
+        </a>
+      </div>
+
+      <!-- Zac Bragg Profile Block -->
+      <article 
+        id="zac-bragg"
+        class="founder-profile-block bg-white rounded-2xl border border-gray-200 p-8 md:p-10 lg:p-12 mb-12 md:mb-16 shadow-sm"
+        data-reveal-index="0"
+      >
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 mb-10">
+          <!-- Left Column: Avatar, Name, Role, Location, Chips -->
+          <div class="founder-info">
+            <div class="founder-avatar mb-6">
+              <div class="w-24 h-24 rounded-full bg-gray-100 border-2 border-gray-200 flex items-center justify-center">
+                <span class="text-3xl font-semibold text-gray-700">ZB</span>
+              </div>
+            </div>
+            <h3 class="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
+              Zac Bragg
+            </h3>
+            <p class="text-base md:text-lg text-gray-700 font-medium mb-1">
+              Founder, ClarityPath AI Consulting
+            </p>
+            <p class="text-sm md:text-base text-gray-600 mb-2">
+              Systems Architect, Clarity OS
+            </p>
+            <p class="text-sm text-gray-500 mb-6">
+              Rural Tennessee
+            </p>
+            
+            <!-- Value Chips -->
+            <div class="founder-chips flex flex-wrap gap-2">
+              <span class="value-chip px-3 py-1.5 text-xs font-medium rounded-full bg-gray-50 border border-gray-200 text-gray-700">
+                Infrastructure first
+              </span>
+              <span class="value-chip px-3 py-1.5 text-xs font-medium rounded-full bg-gray-50 border border-gray-200 text-gray-700">
+                Trust-centered
+              </span>
+              <span class="value-chip px-3 py-1.5 text-xs font-medium rounded-full bg-gray-50 border border-gray-200 text-gray-700">
+                Field proven
+              </span>
+            </div>
+          </div>
+
+          <!-- Right Column: Bio -->
+          <div class="founder-bio space-y-4">
+            <p class="text-base md:text-lg text-gray-700 leading-relaxed">
+              Zac Bragg is the Founder of ClarityPath AI Consulting and the systems architect behind Clarity OS.
+            </p>
+            <p class="text-base md:text-lg text-gray-700 leading-relaxed">
+              Over a 20+ year career at AT&T, Zac rose from frontline sales to regional leadership, leading large-scale technology modernization and deployment programs across thousands of retail locations. Operating out of AT&T's Atlanta headquarters, he worked at the intersection of executive strategy and frontline execution, translating complex enterprise initiatives into systems that functioned reliably in the field.
+            </p>
+            <p class="text-base md:text-lg text-gray-700 leading-relaxed">
+              His work included leading region enterprise-wide Salesforce and Microsoft Teams deployments supporting hundreds of locations and cross-functional teams.
+            </p>
+            <p class="text-base md:text-lg text-gray-700 leading-relaxed">
+              That experience shaped his approach to AI: infrastructure first, execution over theory.
+            </p>
+            <p class="text-base md:text-lg text-gray-700 leading-relaxed">
+              At ClarityPath, Zac helps small and mid-sized operators, SaaS builders, and growth-stage companies implement AI and technical systems in ways that are practical, secure, and operationally sustainable. Clarity OS is designed as a privacy-forward, trust-centered system that reduces operational chaos instead of adding to it.
+            </p>
+            <p class="text-base md:text-lg text-gray-700 leading-relaxed">
+              Zac currently lives in rural Tennessee, where he prioritizes family, community, and building digitally at his desk or hands on in his workshop. He builds companies the same way he builds systems: deliberately, ethically, and for the long term.
+            </p>
+          </div>
+        </div>
+
+        <!-- Mini Cards Grid -->
+        <div class="founder-mini-cards grid grid-cols-1 md:grid-cols-3 gap-6 mt-10">
+          <!-- Mini Card 1: Credentials and Experience -->
+          <div class="founder-mini-card bg-gray-50 rounded-xl border border-gray-200 p-6" data-reveal-index="1">
+            <h4 class="text-lg font-semibold text-gray-900 mb-2">
+              Credentials and Experience
+            </h4>
+            <p class="text-sm text-gray-600 mb-4 font-medium">
+              Enterprise Leadership
+            </p>
+            <ul class="space-y-2 text-sm text-gray-700">
+              <li class="flex items-start gap-2">
+                <span class="text-gray-400 mt-1">•</span>
+                <span>20+ years at AT&T, Fortune 50</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-gray-400 mt-1">•</span>
+                <span>Led modernization programs across 2,500+ retail locations</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-gray-400 mt-1">•</span>
+                <span>Directed retail automation across 280 stores spanning 10 states</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-gray-400 mt-1">•</span>
+                <span>Orchestrated Salesforce CRM rollout across 400+ stores achieving 90 percent adoption in 6 months</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-gray-400 mt-1">•</span>
+                <span>Launched Microsoft Teams enterprise rollout supporting hundreds of locations and regional leadership</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-gray-400 mt-1">•</span>
+                <span>Led East Region automated kiosk deployment across approximately 1,200 locations</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-gray-400 mt-1">•</span>
+                <span>Led executive war rooms with 100 percent escalation resolution</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-gray-400 mt-1">•</span>
+                <span>AT&T Service Excellence Award recipient for Salesforce deployment leadership</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-gray-400 mt-1">•</span>
+                <span>Two time consecutive AT&T Summit Award winner</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Mini Card 2: Certifications -->
+          <div class="founder-mini-card bg-gray-50 rounded-xl border border-gray-200 p-6" data-reveal-index="2">
+            <h4 class="text-lg font-semibold text-gray-900 mb-4">
+              Certifications
+            </h4>
+            <ul class="space-y-2 text-sm text-gray-700 mb-6">
+              <li class="flex items-start gap-2">
+                <span class="text-gray-400 mt-1">•</span>
+                <span>Certified ScrumMaster, CSM</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-gray-400 mt-1">•</span>
+                <span>SAFe 6 Agilist</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-gray-400 mt-1">•</span>
+                <span>Scrum Better with Kanban</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-gray-400 mt-1">•</span>
+                <span>PMP exam scheduled June 2026</span>
+              </li>
+            </ul>
+            
+            <!-- Logo Row -->
+            <div class="founder-logos flex flex-wrap items-center gap-3 pt-4 border-t border-gray-200">
+              <span class="logo-pill px-3 py-1.5 text-xs font-medium rounded bg-gray-100 text-gray-600 tracking-wide">AT&T</span>
+              <span class="logo-pill px-3 py-1.5 text-xs font-medium rounded bg-gray-100 text-gray-600 tracking-wide">Salesforce</span>
+              <span class="logo-pill px-3 py-1.5 text-xs font-medium rounded bg-gray-100 text-gray-600 tracking-wide">Microsoft Teams</span>
+              <span class="logo-pill px-3 py-1.5 text-xs font-medium rounded bg-gray-100 text-gray-600 tracking-wide">Scrum Alliance</span>
+              <span class="logo-pill px-3 py-1.5 text-xs font-medium rounded bg-gray-100 text-gray-600 tracking-wide">Scaled Agile</span>
+            </div>
+          </div>
+
+          <!-- Mini Card 3: Core Expertise -->
+          <div class="founder-mini-card bg-gray-50 rounded-xl border border-gray-200 p-6" data-reveal-index="3">
+            <h4 class="text-lg font-semibold text-gray-900 mb-4">
+              Core Expertise
+            </h4>
+            <ul class="space-y-2 text-sm text-gray-700">
+              <li class="flex items-start gap-2">
+                <span class="text-gray-400 mt-1">•</span>
+                <span>Enterprise Technology Rollouts</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-gray-400 mt-1">•</span>
+                <span>AI Implementation and Enablement</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-gray-400 mt-1">•</span>
+                <span>CRM and POS Modernization</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-gray-400 mt-1">•</span>
+                <span>Operational Stabilization and Adoption</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-gray-400 mt-1">•</span>
+                <span>Change Management and Field Readiness</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-gray-400 mt-1">•</span>
+                <span>Cross-Functional and Vendor Leadership</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-gray-400 mt-1">•</span>
+                <span>Executive Communication and Risk Management</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+      <!-- Lubna Fatima Profile Block -->
+      <article 
+        id="lubna-fatima"
+        class="founder-profile-block bg-white rounded-2xl border border-gray-200 p-8 md:p-10 lg:p-12 shadow-sm"
+        data-reveal-index="4"
+      >
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 mb-10">
+          <!-- Left Column: Avatar, Name, Role, Chips -->
+          <div class="founder-info">
+            <div class="founder-avatar mb-6">
+              <div class="w-24 h-24 rounded-full bg-gray-100 border-2 border-gray-200 flex items-center justify-center">
+                <span class="text-3xl font-semibold text-gray-700">LF</span>
+              </div>
+            </div>
+            <h3 class="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
+              Lubna Fatima
+            </h3>
+            <p class="text-base md:text-lg text-gray-700 font-medium mb-6">
+              Foundational AI Engineer
+            </p>
+            
+            <!-- Value Chips -->
+            <div class="founder-chips flex flex-wrap gap-2">
+              <span class="value-chip px-3 py-1.5 text-xs font-medium rounded-full bg-gray-50 border border-gray-200 text-gray-700">
+                Applied AI systems
+              </span>
+              <span class="value-chip px-3 py-1.5 text-xs font-medium rounded-full bg-gray-50 border border-gray-200 text-gray-700">
+                Structured implementation
+              </span>
+              <span class="value-chip px-3 py-1.5 text-xs font-medium rounded-full bg-gray-50 border border-gray-200 text-gray-700">
+                Reliable foundations
+              </span>
+            </div>
+          </div>
+
+          <!-- Right Column: Bio -->
+          <div class="founder-bio space-y-4">
+            <p class="text-base md:text-lg text-gray-700 leading-relaxed">
+              Lubna Fatima serves as the Foundational AI Engineer at ClarityPath AI Consulting. She focuses on applied AI systems, structured implementation, and building reliable foundations that support long-term operational clarity. Her work centers on translating advanced AI capability into usable systems that teams can adopt confidently and securely.
+            </p>
+          </div>
+        </div>
+
+        <!-- Mini Cards Grid (2 cards for Lubna) -->
+        <div class="founder-mini-cards grid grid-cols-1 md:grid-cols-2 gap-6 mt-10 max-w-4xl">
+          <!-- Mini Card 1: Focus Areas -->
+          <div class="founder-mini-card bg-gray-50 rounded-xl border border-gray-200 p-6" data-reveal-index="5">
+            <h4 class="text-lg font-semibold text-gray-900 mb-4">
+              Focus Areas
+            </h4>
+            <ul class="space-y-2 text-sm text-gray-700">
+              <li class="flex items-start gap-2">
+                <span class="text-gray-400 mt-1">•</span>
+                <span>Applied AI workflows</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-gray-400 mt-1">•</span>
+                <span>System reliability</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-gray-400 mt-1">•</span>
+                <span>Secure adoption patterns</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Mini Card 2: Working Style -->
+          <div class="founder-mini-card bg-gray-50 rounded-xl border border-gray-200 p-6" data-reveal-index="6">
+            <h4 class="text-lg font-semibold text-gray-900 mb-4">
+              Working Style
+            </h4>
+            <ul class="space-y-2 text-sm text-gray-700">
+              <li class="flex items-start gap-2">
+                <span class="text-gray-400 mt-1">•</span>
+                <span>Clear documentation</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-gray-400 mt-1">•</span>
+                <span>Practical delivery</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-gray-400 mt-1">•</span>
+                <span>Calm, consistent execution</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<style>
+  @import '../styles/sections.css';
+</style>
+
+<script>
+  import { initRevealOnScroll } from '../scripts/revealOnScroll';
+  
+  // Smooth scroll for navigation pills
+  function initFounderNav() {
+    const navPills = document.querySelectorAll('.founder-nav-pill');
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    
+    navPills.forEach(pill => {
+      pill.addEventListener('click', (e) => {
+        e.preventDefault();
+        const targetId = pill.getAttribute('href');
+        if (targetId) {
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            const offset = 100; // Offset for fixed headers if any
+            const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+            const offsetPosition = elementPosition - offset;
+            
+            window.scrollTo({
+              top: offsetPosition,
+              behavior: prefersReducedMotion ? 'auto' : 'smooth'
+            });
+          }
+        }
+      });
+    });
+  }
+  
+  if (typeof window !== 'undefined') {
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', () => {
+        initRevealOnScroll();
+        initFounderNav();
+      });
+    } else {
+      initRevealOnScroll();
+      initFounderNav();
+    }
+  }
+</script>

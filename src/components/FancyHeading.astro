@@ -1,0 +1,61 @@
+---
+// FancyHeading component - Makes the last word use the accent font (Playfair Display)
+interface Props {
+  as?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+  text: string;
+  id?: string;
+  class?: string;
+}
+
+const { as = 'h2', text, id, class: className = '' } = Astro.props;
+
+// Split text into words, last word gets accent font
+const words = text.split(' ');
+const lastWord = words.pop() || '';
+const restOfText = words.join(' ');
+---
+
+{as === 'h1' && (
+  <h1 id={id} class={`fancy-heading ${className}`}>
+    {restOfText && <span>{restOfText} </span>}
+    <span class="fancy-heading-accent">{lastWord}</span>
+  </h1>
+)}
+{as === 'h2' && (
+  <h2 id={id} class={`fancy-heading ${className}`}>
+    {restOfText && <span>{restOfText} </span>}
+    <span class="fancy-heading-accent">{lastWord}</span>
+  </h2>
+)}
+{as === 'h3' && (
+  <h3 id={id} class={`fancy-heading ${className}`}>
+    {restOfText && <span>{restOfText} </span>}
+    <span class="fancy-heading-accent">{lastWord}</span>
+  </h3>
+)}
+{as === 'h4' && (
+  <h4 id={id} class={`fancy-heading ${className}`}>
+    {restOfText && <span>{restOfText} </span>}
+    <span class="fancy-heading-accent">{lastWord}</span>
+  </h4>
+)}
+{as === 'h5' && (
+  <h5 id={id} class={`fancy-heading ${className}`}>
+    {restOfText && <span>{restOfText} </span>}
+    <span class="fancy-heading-accent">{lastWord}</span>
+  </h5>
+)}
+{as === 'h6' && (
+  <h6 id={id} class={`fancy-heading ${className}`}>
+    {restOfText && <span>{restOfText} </span>}
+    <span class="fancy-heading-accent">{lastWord}</span>
+  </h6>
+)}
+
+<style>
+  .fancy-heading-accent {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    margin-left: 0.25em;
+  }
+</style>

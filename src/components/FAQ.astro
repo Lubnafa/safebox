@@ -1,0 +1,149 @@
+---
+// FAQ component - Frequently asked questions with search and accordion
+import FancyHeading from './FancyHeading.astro';
+
+const faqItems = [
+  {
+    id: 'faq-1',
+    question: 'Do I need to be technical?',
+    answer: 'No. You talk normally. SafeBox is built for non-technical households and busy business owners.'
+  },
+  {
+    id: 'faq-2',
+    question: 'What happens if the internet goes out?',
+    answer: 'SafeBox switches to offline help and tells you what\'s limited.'
+  },
+  {
+    id: 'faq-3',
+    question: 'Does it train on my data?',
+    answer: 'No. Your data is not sold or used to train public models.'
+  },
+  {
+    id: 'faq-4',
+    question: 'Can it do things like sending emails or changing my calendar?',
+    answer: 'Only when you explicitly approve. No surprises.'
+  },
+  {
+    id: 'faq-5',
+    question: 'Can I delete everything?',
+    answer: 'Yes. You can clear memory and wipe your vault any time.'
+  },
+  {
+    id: 'faq-6',
+    question: 'Is this only for families?',
+    answer: 'No. It\'s built for families, small businesses, and power users who want reliability.'
+  }
+];
+---
+
+<section 
+  class="faq py-20 md:py-24 lg:py-32 bg-white"
+  aria-labelledby="faq"
+>
+  <div class="container mx-auto px-6 md:px-12 lg:px-16">
+    <div class="max-w-4xl mx-auto">
+      
+      <!-- Header with Search -->
+      <div class="faq-header mb-12 md:mb-16">
+        <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6 mb-4">
+          <div class="faq-title" data-reveal>
+            <FancyHeading 
+              as="h2"
+              id="faq"
+              text="FAQ"
+              class="text-3xl md:text-4xl lg:text-5xl font-bold mb-2"
+            />
+            <p class="text-lg md:text-xl text-gray-600">
+              Quick answers, clear expectations.
+            </p>
+          </div>
+          
+          <!-- Search Input -->
+          <div class="faq-search" data-reveal>
+            <label for="faq-search-input" class="sr-only">Search FAQ</label>
+            <input
+              type="text"
+              id="faq-search-input"
+              class="faq-search-input w-full md:w-64 px-4 py-2.5 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent transition-colors"
+              placeholder="Search questions..."
+              aria-label="Search frequently asked questions"
+            />
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ Container -->
+      <div class="faq-container bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden">
+        <div class="faq-list" role="list">
+          {faqItems.map((item, index) => (
+            <div 
+              class="faq-item border-b border-gray-200 last:border-b-0"
+              data-faq-item
+              data-index={index}
+            >
+              <button
+                class="faq-question w-full px-6 py-5 text-left flex items-center justify-between gap-4 hover:bg-gray-50 focus:outline-none focus:bg-gray-50 transition-colors"
+                aria-expanded="false"
+                aria-controls={item.id}
+                data-faq-button
+                id={`button-${item.id}`}
+              >
+                <span class="faq-question-text text-base md:text-lg font-medium text-gray-900 flex-1">
+                  {item.question}
+                </span>
+                <span class="faq-icon flex-shrink-0 w-5 h-5 text-gray-600 transition-transform duration-200" aria-hidden="true">
+                  <svg 
+                    fill="none" 
+                    stroke="currentColor" 
+                    viewBox="0 0 24 24"
+                    class="w-5 h-5"
+                  >
+                    <path 
+                      stroke-linecap="round" 
+                      stroke-linejoin="round" 
+                      stroke-width="2" 
+                      d="M12 4v16m8-8H4"
+                    />
+                  </svg>
+                </span>
+              </button>
+              <div
+                class="faq-answer-wrapper overflow-hidden"
+                id={item.id}
+                role="region"
+                aria-labelledby={`button-${item.id}`}
+              >
+                <div class="faq-answer-content px-6 pb-5">
+                  <p class="text-gray-700 leading-relaxed">
+                    {item.answer}
+                  </p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <!-- No Results Message -->
+        <div class="faq-no-results hidden px-6 py-12 text-center">
+          <p class="text-gray-600">No matches found.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  @import '../styles/sections.css';
+</style>
+
+<script>
+  import { initFAQ } from '../scripts/faq';
+  
+  if (typeof window !== 'undefined') {
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initFAQ);
+    } else {
+      initFAQ();
+    }
+  }
+</script>

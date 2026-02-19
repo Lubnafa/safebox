@@ -1,0 +1,246 @@
+---
+// TrustPrivacy component - Privacy and trust section with receipt card
+import FancyHeading from './FancyHeading.astro';
+---
+
+<section 
+  class="trust-privacy py-20 md:py-24 lg:py-32 bg-white"
+  aria-labelledby="trust-privacy"
+>
+  <div class="container mx-auto px-6 md:px-12 lg:px-16">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+      
+      <!-- Left Column: Title + Promise Statements -->
+      <div class="trust-privacy-content space-y-8">
+        <div id="trust-privacy" data-reveal>
+          <FancyHeading 
+            as="h2"
+            text="Privacy that feels simple"
+            class="text-3xl md:text-4xl lg:text-5xl font-bold mb-6"
+          />
+        </div>
+
+        <!-- Promise Statements -->
+        <div class="space-y-4" data-reveal>
+          <p class="text-lg md:text-xl text-gray-700 leading-relaxed">
+            Your data isn't used to sell you things.
+          </p>
+          <p class="text-lg md:text-xl text-gray-700 leading-relaxed">
+            You control what gets saved.
+          </p>
+          <p class="text-lg md:text-xl text-gray-700 leading-relaxed">
+            SafeBox doesn't pretend it checked something if it didn't.
+          </p>
+        </div>
+      </div>
+
+      <!-- Right Column: Receipt Card -->
+      <div class="trust-privacy-visual" data-reveal>
+        <div class="receipt-container">
+          <!-- Toggle Buttons -->
+          <div class="receipt-toggle flex gap-2 mb-4" role="group" aria-label="Receipt save state">
+            <button
+              class="receipt-toggle-btn px-4 py-2 text-sm font-medium rounded border border-gray-300 bg-white text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-gray-900 focus:ring-offset-2 transition-colors"
+              aria-pressed="true"
+              data-state="saved"
+            >
+              Saved
+            </button>
+            <button
+              class="receipt-toggle-btn px-4 py-2 text-sm font-medium rounded border border-gray-300 bg-white text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-gray-900 focus:ring-offset-2 transition-colors"
+              aria-pressed="false"
+              data-state="not-saved"
+            >
+              Not Saved
+            </button>
+          </div>
+
+          <!-- Receipt Card -->
+          <div class="receipt-card rounded-lg border border-gray-300 p-6 shadow-sm">
+            <div class="receipt-header mb-4 pb-3 border-b border-gray-200">
+              <h3 class="text-sm font-semibold text-gray-900 uppercase tracking-wide">Receipt</h3>
+            </div>
+
+            <div class="receipt-content space-y-3 text-sm">
+              <!-- Timestamp -->
+              <div class="receipt-field">
+                <span class="receipt-label text-gray-600">Timestamp:</span>
+                <span class="receipt-value text-gray-900">2024-01-15 14:32</span>
+              </div>
+
+              <!-- Request -->
+              <div class="receipt-field receipt-field-saved">
+                <span class="receipt-label text-gray-600">Request:</span>
+                <span class="receipt-value text-gray-900">What's the weather today?</span>
+              </div>
+
+              <!-- Answer -->
+              <div class="receipt-field receipt-field-saved">
+                <span class="receipt-label text-gray-600">Answer:</span>
+                <span class="receipt-value text-gray-900">Partly cloudy, 72°F</span>
+              </div>
+
+              <!-- Sources Available -->
+              <div class="receipt-field receipt-field-saved">
+                <span class="receipt-label text-gray-600">Sources available:</span>
+                <span class="receipt-value text-gray-900">Weather API, Local cache</span>
+              </div>
+
+              <!-- Saved Status -->
+              <div class="receipt-field receipt-field-status mt-4 pt-3 border-t border-gray-100">
+                <span class="receipt-label text-gray-600">Saved:</span>
+                <span class="receipt-value text-gray-900 font-medium">Yes</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- What We Store / What We Don't Store Lists -->
+    <div class="mt-16 md:mt-20">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+        <!-- What We Store -->
+        <div class="store-list-card" data-reveal>
+          <h3 class="text-xl md:text-2xl font-semibold text-gray-900 mb-4">
+            What we store
+          </h3>
+          <ul class="space-y-3">
+            <li class="flex items-start gap-3">
+              <svg 
+                class="w-5 h-5 text-gray-700 mt-0.5 flex-shrink-0"
+                fill="none" 
+                stroke="currentColor" 
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <path 
+                  stroke-linecap="round" 
+                  stroke-linejoin="round" 
+                  stroke-width="2" 
+                  d="M5 13l4 4L19 7"
+                />
+              </svg>
+              <span class="text-gray-700">What you asked (when you choose to save it)</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg 
+                class="w-5 h-5 text-gray-700 mt-0.5 flex-shrink-0"
+                fill="none" 
+                stroke="currentColor" 
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <path 
+                  stroke-linecap="round" 
+                  stroke-linejoin="round" 
+                  stroke-width="2" 
+                  d="M5 13l4 4L19 7"
+                />
+              </svg>
+              <span class="text-gray-700">What SafeBox answered</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg 
+                class="w-5 h-5 text-gray-700 mt-0.5 flex-shrink-0"
+                fill="none" 
+                stroke="currentColor" 
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <path 
+                  stroke-linecap="round" 
+                  stroke-linejoin="round" 
+                  stroke-width="2" 
+                  d="M5 13l4 4L19 7"
+                />
+              </svg>
+              <span class="text-gray-700">What sources were available at the time (so it can be honest later)</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- What We Don't Store -->
+        <div class="store-list-card" data-reveal>
+          <h3 class="text-xl md:text-2xl font-semibold text-gray-900 mb-4">
+            What we don't store
+          </h3>
+          <ul class="space-y-3">
+            <li class="flex items-start gap-3">
+              <svg 
+                class="w-5 h-5 text-gray-700 mt-0.5 flex-shrink-0"
+                fill="none" 
+                stroke="currentColor" 
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <path 
+                  stroke-linecap="round" 
+                  stroke-linejoin="round" 
+                  stroke-width="2" 
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+              <span class="text-gray-700">Anything you mark as sensitive</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg 
+                class="w-5 h-5 text-gray-700 mt-0.5 flex-shrink-0"
+                fill="none" 
+                stroke="currentColor" 
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <path 
+                  stroke-linecap="round" 
+                  stroke-linejoin="round" 
+                  stroke-width="2" 
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+              <span class="text-gray-700">Anything that would surprise you if you saw it later</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg 
+                class="w-5 h-5 text-gray-700 mt-0.5 flex-shrink-0"
+                fill="none" 
+                stroke="currentColor" 
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <path 
+                  stroke-linecap="round" 
+                  stroke-linejoin="round" 
+                  stroke-width="2" 
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+              <span class="text-gray-700">Anything that doesn't need to be saved</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  @import '../styles/sections.css';
+</style>
+
+<script>
+  import { initRevealOnScroll } from '../scripts/revealOnScroll';
+  import { initReceiptToggle } from '../scripts/receiptToggle';
+  
+  if (typeof window !== 'undefined') {
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', () => {
+        initRevealOnScroll();
+        initReceiptToggle();
+      });
+    } else {
+      initRevealOnScroll();
+      initReceiptToggle();
+    }
+  }
+</script>

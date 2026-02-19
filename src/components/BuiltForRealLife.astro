@@ -1,0 +1,300 @@
+---
+// BuiltForRealLife component - Tabbed audience panels section
+import FancyHeading from './FancyHeading.astro';
+---
+
+<section 
+  class="built-for-real-life py-20 md:py-24 lg:py-32 bg-white"
+  aria-labelledby="built-for-real-life"
+>
+  <div class="container mx-auto px-6 md:px-12 lg:px-16">
+    <!-- Section Header -->
+    <div class="text-center mb-12 md:mb-16">
+      <FancyHeading 
+        as="h2"
+        id="built-for-real-life"
+        text="Built for real life"
+        class="text-3xl md:text-4xl lg:text-5xl font-bold mb-4"
+      />
+    </div>
+
+    <!-- Tab Switcher -->
+    <div class="built-for-tabs-container max-w-4xl mx-auto">
+      <div 
+        class="built-for-tabs flex flex-wrap justify-center gap-2 md:gap-4 mb-8 md:mb-12 relative"
+        role="tablist"
+        aria-label="Select audience type"
+      >
+        <!-- Tab 1: Small Business -->
+        <button
+          class="built-for-tab px-6 py-3 text-base md:text-lg font-medium text-gray-700 hover:text-gray-900 transition-colors duration-200 relative focus:outline-none border-0"
+          role="tab"
+          aria-selected="true"
+          aria-controls="panel-small-business"
+          id="tab-small-business"
+          data-tab="small-business"
+        >
+          Small Business
+        </button>
+
+        <!-- Tab 2: Families -->
+        <button
+          class="built-for-tab px-6 py-3 text-base md:text-lg font-medium text-gray-700 hover:text-gray-900 transition-colors duration-200 relative focus:outline-none border-0"
+          role="tab"
+          aria-selected="false"
+          aria-controls="panel-families"
+          id="tab-families"
+          data-tab="families"
+        >
+          Families
+        </button>
+
+        <!-- Tab 3: Power Users -->
+        <button
+          class="built-for-tab px-6 py-3 text-base md:text-lg font-medium text-gray-700 hover:text-gray-900 transition-colors duration-200 relative focus:outline-none border-0"
+          role="tab"
+          aria-selected="false"
+          aria-controls="panel-power-users"
+          id="tab-power-users"
+          data-tab="power-users"
+        >
+          Power Users
+        </button>
+
+        <!-- Animated Underline -->
+        <div 
+          class="built-for-tab-underline absolute bottom-0 h-0.5 bg-gray-900 transition-all duration-300 ease-out"
+          aria-hidden="true"
+        ></div>
+      </div>
+
+      <!-- Panel Container -->
+      <div class="built-for-panels relative min-h-[400px]">
+        <!-- Panel 1: Small Business -->
+        <div
+          class="built-for-panel active rounded-xl border border-gray-200 bg-gray-50 p-8 md:p-10"
+          role="tabpanel"
+          id="panel-small-business"
+          aria-labelledby="tab-small-business"
+          data-panel="small-business"
+        >
+          <h3 class="text-2xl md:text-3xl font-semibold text-gray-900 mb-4">
+            Stop losing leads because you were busy working.
+          </h3>
+          <p class="text-lg md:text-xl text-gray-700 leading-relaxed mb-6">
+            SafeBox helps you stay on top of customers without living on your phone. It can draft messages, keep job notes organized, and help you respond faster, while you stay in control.
+          </p>
+          <ul class="space-y-3">
+            <li class="flex items-start gap-3">
+              <svg 
+                class="w-5 h-5 text-gray-700 mt-0.5 flex-shrink-0"
+                fill="none" 
+                stroke="currentColor" 
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <path 
+                  stroke-linecap="round" 
+                  stroke-linejoin="round" 
+                  stroke-width="2" 
+                  d="M5 13l4 4L19 7"
+                />
+              </svg>
+              <span class="text-gray-700">Draft replies and estimates you can review</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg 
+                class="w-5 h-5 text-gray-700 mt-0.5 flex-shrink-0"
+                fill="none" 
+                stroke="currentColor" 
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <path 
+                  stroke-linecap="round" 
+                  stroke-linejoin="round" 
+                  stroke-width="2" 
+                  d="M5 13l4 4L19 7"
+                />
+              </svg>
+              <span class="text-gray-700">Track job notes and details in one place</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg 
+                class="w-5 h-5 text-gray-700 mt-0.5 flex-shrink-0"
+                fill="none" 
+                stroke="currentColor" 
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <path 
+                  stroke-linecap="round" 
+                  stroke-linejoin="round" 
+                  stroke-width="2" 
+                  d="M5 13l4 4L19 7"
+                />
+              </svg>
+              <span class="text-gray-700">Stay responsive even when you're in the field</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Panel 2: Families -->
+        <div
+          class="built-for-panel rounded-xl border border-gray-200 bg-gray-50 p-8 md:p-10"
+          role="tabpanel"
+          id="panel-families"
+          aria-labelledby="tab-families"
+          data-panel="families"
+          hidden
+        >
+          <h3 class="text-2xl md:text-3xl font-semibold text-gray-900 mb-4">
+            A calmer assistant for the home.
+          </h3>
+          <p class="text-lg md:text-xl text-gray-700 leading-relaxed mb-6">
+            SafeBox is designed to feel safe around family life, predictable, clear, and private.
+          </p>
+          <ul class="space-y-3">
+            <li class="flex items-start gap-3">
+              <svg 
+                class="w-5 h-5 text-gray-700 mt-0.5 flex-shrink-0"
+                fill="none" 
+                stroke="currentColor" 
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <path 
+                  stroke-linecap="round" 
+                  stroke-linejoin="round" 
+                  stroke-width="2" 
+                  d="M5 13l4 4L19 7"
+                />
+              </svg>
+              <span class="text-gray-700">Kid-safe defaults and clear boundaries</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg 
+                class="w-5 h-5 text-gray-700 mt-0.5 flex-shrink-0"
+                fill="none" 
+                stroke="currentColor" 
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <path 
+                  stroke-linecap="round" 
+                  stroke-linejoin="round" 
+                  stroke-width="2" 
+                  d="M5 13l4 4L19 7"
+                />
+              </svg>
+              <span class="text-gray-700">Help even during internet outages</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg 
+                class="w-5 h-5 text-gray-700 mt-0.5 flex-shrink-0"
+                fill="none" 
+                stroke="currentColor" 
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <path 
+                  stroke-linecap="round" 
+                  stroke-linejoin="round" 
+                  stroke-width="2" 
+                  d="M5 13l4 4L19 7"
+                />
+              </svg>
+              <span class="text-gray-700">Less random behavior and confusion</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Panel 3: Power Users -->
+        <div
+          class="built-for-panel rounded-xl border border-gray-200 bg-gray-50 p-8 md:p-10"
+          role="tabpanel"
+          id="panel-power-users"
+          aria-labelledby="tab-power-users"
+          data-panel="power-users"
+          hidden
+        >
+          <h3 class="text-2xl md:text-3xl font-semibold text-gray-900 mb-4">
+            More leverage. Less babysitting.
+          </h3>
+          <p class="text-lg md:text-xl text-gray-700 leading-relaxed mb-6">
+            If you use GPT every day, you already know the pain: confident wrong answers, lost context, and inconsistent behavior. SafeBox is built to reduce that load.
+          </p>
+          <ul class="space-y-3">
+            <li class="flex items-start gap-3">
+              <svg 
+                class="w-5 h-5 text-gray-700 mt-0.5 flex-shrink-0"
+                fill="none" 
+                stroke="currentColor" 
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <path 
+                  stroke-linecap="round" 
+                  stroke-linejoin="round" 
+                  stroke-width="2" 
+                  d="M5 13l4 4L19 7"
+                />
+              </svg>
+              <span class="text-gray-700">Clear uncertainty when something isn't known</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg 
+                class="w-5 h-5 text-gray-700 mt-0.5 flex-shrink-0"
+                fill="none" 
+                stroke="currentColor" 
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <path 
+                  stroke-linecap="round" 
+                  stroke-linejoin="round" 
+                  stroke-width="2" 
+                  d="M5 13l4 4L19 7"
+                />
+              </svg>
+              <span class="text-gray-700">More consistency across sessions</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg 
+                class="w-5 h-5 text-gray-700 mt-0.5 flex-shrink-0"
+                fill="none" 
+                stroke="currentColor" 
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <path 
+                  stroke-linecap="round" 
+                  stroke-linejoin="round" 
+                  stroke-width="2" 
+                  d="M5 13l4 4L19 7"
+                />
+              </svg>
+              <span class="text-gray-700">Less prompt repetition and re-explaining</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  @import '../styles/sections.css';
+</style>
+
+<script>
+  import { initTabsBuiltForLife } from '../scripts/tabsBuiltForLife';
+  
+  if (typeof window !== 'undefined') {
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initTabsBuiltForLife);
+    } else {
+      initTabsBuiltForLife();
+    }
+  }
+</script>

@@ -38,12 +38,35 @@
 [data-reveal] {
   opacity: 0;
   transform: translateY(20px);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 [data-reveal].is-visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* TrustPrivacy Text Animations */
+.trust-privacy-text {
+  transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1), transform 0.6s cubic-bezier(0.4, 0, 0.2, 1), color 0.3s ease-out;
+}
+
+.trust-privacy-text:hover {
+  transform: translateX(4px);
+  color: #374151;
+}
+
+/* Staggered animation for trust privacy text */
+.trust-privacy-content .trust-privacy-text:nth-child(1) {
+  transition-delay: 0.1s;
+}
+
+.trust-privacy-content .trust-privacy-text:nth-child(2) {
+  transition-delay: 0.2s;
+}
+
+.trust-privacy-content .trust-privacy-text:nth-child(3) {
+  transition-delay: 0.3s;
 }
 
 /* Staggered list items */
@@ -328,66 +351,77 @@
   transform: translateY(-3px);
 }
 
-/* BuiltForRealLife Tab Styles */
-.built-for-tabs {
-  position: relative;
-  border-bottom: 1px solid #e5e7eb;
-  padding-bottom: 0.5rem;
-}
-
-.built-for-tab {
-  position: relative;
-  z-index: 1;
-  transition: transform 0.2s ease-out;
-  border: none;
-  background: none;
-  outline: none;
-}
-
-.built-for-tab:hover:not([aria-selected="true"]) {
-  transform: translateY(-2px);
-}
-
-.built-for-tab[aria-selected="true"] {
-  color: #111827;
-  font-weight: 600;
-}
-
-.built-for-tab-underline {
-  position: absolute;
-  bottom: -1px;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background-color: #111827;
-  transition: left 0.3s ease-out, width 0.3s ease-out;
-}
-
-/* Panel Transition Styles */
-.built-for-panel {
-  opacity: 1;
-  transform: translateY(0);
-  transition: opacity 0.3s ease-out, transform 0.3s ease-out;
-}
-
-.built-for-panel:not(.active) {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  opacity: 0;
-  transform: translateY(10px);
-  pointer-events: none;
-  visibility: hidden;
-}
-
-.built-for-panel.active {
-  position: relative;
-  visibility: visible;
-}
-
+/* BuiltForRealLife Carousel Styles */
 .built-for-panels {
   position: relative;
+  overflow: hidden;
+  width: 100%;
+  border-radius: 1rem;
+}
+
+.built-for-carousel-track {
+  display: flex;
+  gap: 0;
+  animation: carousel-scroll 30s linear infinite;
+  will-change: transform;
+}
+
+.built-for-panel {
+  flex: 0 0 100%;
+  min-width: 100%;
+  max-width: 100%;
+  min-height: 400px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 1rem;
+}
+
+/* Remove blur effect to show original images */
+.built-for-panel::before {
+  display: none;
+}
+
+.built-for-panel > div:first-child {
+  z-index: 1;
+  backdrop-filter: blur(1px);
+}
+
+.built-for-panel > div:last-child {
+  z-index: 2;
+  position: relative;
+}
+
+@keyframes carousel-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-300%);
+  }
+}
+
+/* Pause animation on hover */
+.built-for-panels:hover .built-for-carousel-track {
+  animation-play-state: paused;
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .built-for-carousel-track {
+    animation: none;
+    transform: translateX(0);
+  }
+  
+  .built-for-panel {
+    flex: 0 0 100%;
+    min-width: 100%;
+    max-width: 100%;
+  }
+  
+  /* Show only first panel when reduced motion */
+  .built-for-panel:not(:first-child) {
+    display: none;
+  }
 }
 
 /* TrustPrivacy Receipt Card Styles */
@@ -409,12 +443,26 @@
 
 .receipt-toggle-btn {
   cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateY(0);
+}
+
+.receipt-toggle-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.receipt-toggle-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .receipt-toggle-btn.active {
   background-color: #111827;
   color: #ffffff;
   border-color: #111827;
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(17, 24, 39, 0.3);
 }
 
 .receipt-card {
@@ -432,25 +480,36 @@
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
-  transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+  transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1), transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .receipt-label {
   font-weight: 500;
+  transition: color 0.3s ease-out;
 }
 
 .receipt-value {
   word-break: break-word;
+  transition: color 0.3s ease-out;
 }
 
 .receipt-field-saved {
   opacity: 1;
   transform: translateY(0);
-  transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+  transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1), transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .receipt-field-saved.is-hidden {
   opacity: 0.3;
+  transform: translateY(-2px);
+}
+
+.receipt-card {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.receipt-card:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
   transform: translateY(-2px);
 }
 
@@ -800,8 +859,112 @@ button.faq-question.is-open .faq-icon {
 
 /* Final CTA Section Styles */
 .final-cta-panel {
-  background-color: #fafafa;
-  border: 1px solid #f3f4f6;
+  background-color: rgba(31, 41, 55, 0.5);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(75, 85, 99, 0.5);
+}
+
+/* Sparkles Animation */
+.sparkles-container {
+  z-index: 1;
+}
+
+.sparkles-circle {
+  position: relative;
+  width: 400px;
+  height: 400px;
+}
+
+@media (min-width: 768px) {
+  .sparkles-circle {
+    width: 500px;
+    height: 500px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .sparkles-circle {
+    width: 600px;
+    height: 600px;
+  }
+}
+
+.sparkle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: #ffffff;
+  border-radius: 50%;
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.8), 0 0 12px rgba(255, 255, 255, 0.6);
+  top: 50%;
+  left: 50%;
+  transform-origin: center center;
+  animation: sparkleOrbit 8s linear infinite;
+  --sparkle-radius: 200px;
+}
+
+@media (min-width: 768px) {
+  .sparkle {
+    --sparkle-radius: 250px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .sparkle {
+    --sparkle-radius: 300px;
+  }
+}
+
+.sparkle-1 {
+  animation-delay: 0s;
+}
+
+.sparkle-2 {
+  animation-delay: -1s;
+}
+
+.sparkle-3 {
+  animation-delay: -2s;
+}
+
+.sparkle-4 {
+  animation-delay: -3s;
+}
+
+.sparkle-5 {
+  animation-delay: -4s;
+}
+
+.sparkle-6 {
+  animation-delay: -5s;
+}
+
+.sparkle-7 {
+  animation-delay: -6s;
+}
+
+.sparkle-8 {
+  animation-delay: -7s;
+}
+
+@keyframes sparkleOrbit {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg) translateX(var(--sparkle-radius)) rotate(0deg);
+    opacity: 1;
+  }
+  25% {
+    opacity: 0.7;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  75% {
+    opacity: 0.7;
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg) translateX(var(--sparkle-radius)) rotate(-360deg);
+    opacity: 1;
+  }
 }
 
 .final-cta-buttons {
@@ -839,11 +1002,18 @@ button.faq-question.is-open .faq-icon {
 }
 
 .final-cta-input {
-  background-color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.final-cta-input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
 }
 
 .final-cta-input:focus {
-  border-color: #111827;
+  border-color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.15);
 }
 
 .final-cta-input[aria-invalid="true"] {
@@ -884,6 +1054,21 @@ button.faq-question.is-open .faq-icon {
 
 /* Reduced motion support for CTA and Footer */
 @media (prefers-reduced-motion: reduce) {
+  .sparkle {
+    animation: none;
+  }
+  
+  .sparkle-1,
+  .sparkle-2,
+  .sparkle-3,
+  .sparkle-4,
+  .sparkle-5,
+  .sparkle-6,
+  .sparkle-7,
+  .sparkle-8 {
+    transform: none;
+  }
+
   .final-cta-buttons {
     transition: none;
   }

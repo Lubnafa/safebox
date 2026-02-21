@@ -25,17 +25,17 @@ const currentYear = new Date().getFullYear();
   </div>
   
   <div class="container mx-auto px-6 md:px-12 lg:px-16 relative z-10">
-    <div class="final-cta-panel bg-gray-800/50 backdrop-blur-sm rounded-2xl p-8 md:p-12 lg:p-16 border border-gray-700/50">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+    
+     
         
         <!-- Left Column: Heading, Subhead, and Buttons -->
         <div class="final-cta-content" data-reveal>
-          <FancyHeading 
-            as="h2"
+          <h2 
             id="final-cta"
-            text="Ready for an assistant you can trust?"
-            class="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-white"
-          />
+            class="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-white leading-tight"
+          >
+            Ready for an assistant you can <span class="italic" style="color: #5ECFFF;">trust?</span>
+          </h2>
           <p class="text-lg md:text-xl text-gray-300 leading-relaxed mb-6">
             Join the waitlist to see SafeBox in action and get early access updates.
           </p>
@@ -44,21 +44,18 @@ const currentYear = new Date().getFullYear();
           <div class="final-cta-buttons flex flex-col sm:flex-row gap-4">
             <button
               type="button"
-              class="final-cta-primary inline-flex items-center justify-center px-8 py-4 bg-gray-900 text-white font-medium rounded-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-gray-900 focus:ring-offset-2"
+              class="final-cta-primary inline-flex items-center justify-center px-8 py-4 bg-blue-600 text-white font-medium rounded-lg transition-all duration-300 hover:bg-blue-700 hover:shadow-xl hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
               data-waitlist-trigger
             >
               Join the waitlist
             </button>
             <a
-              href="#pricing"
-              class="final-cta-secondary inline-flex items-center justify-center px-8 py-4 bg-white text-gray-900 font-medium rounded-lg border-2 border-gray-300 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 hover:border-gray-400 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-900"
-            >
-              See pricing
-            </a>
-            <a
               href="#footer"
-              class="final-cta-tertiary inline-flex items-center justify-center px-8 py-4 bg-transparent text-gray-300 font-medium rounded-lg transition-all duration-300 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-900"
+              class="final-cta-tertiary inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-gray-900 font-medium rounded-lg transition-all duration-300 hover:bg-gray-100 hover:shadow-lg hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-900"
             >
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
               Contact
             </a>
           </div>
@@ -71,7 +68,7 @@ const currentYear = new Date().getFullYear();
                 type="email"
                 id="waitlist-email"
                 name="email"
-                class="final-cta-input flex-1 px-4 py-3 text-base border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent transition-colors"
+                class="final-cta-input flex-1 px-4 py-3 text-base border rounded-lg focus:outline-none focus:ring-2 focus:ring-white focus:border-transparent transition-colors"
                 placeholder="you@domain.com"
                 required
                 aria-label="Email address"
@@ -79,14 +76,14 @@ const currentYear = new Date().getFullYear();
               />
               <button
                 type="submit"
-                class="final-cta-submit inline-flex items-center justify-center px-8 py-3 bg-gray-900 text-white font-medium rounded-lg transition-all duration-300 hover:shadow-lg hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-gray-900 focus:ring-offset-2"
+                class="final-cta-submit inline-flex items-center justify-center px-8 py-3 bg-white text-gray-900 font-medium rounded-lg transition-all duration-300 hover:shadow-lg hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-900"
               >
                 Join
               </button>
             </form>
             <div 
               id="waitlist-error" 
-              class="final-cta-error hidden mt-2 text-sm text-red-600"
+              class="final-cta-error hidden mt-2 text-sm text-red-400"
               role="alert"
               aria-live="polite"
             >

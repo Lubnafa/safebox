@@ -43,6 +43,17 @@ import FinalCTAAndFooter from '../components/FinalCTAAndFooter.astro';
   @tailwind base;
   @tailwind components;
   @tailwind utilities;
+
+  @layer components {
+    .heading-main {
+      @apply font-sans tracking-tight text-neutral-900;
+    }
+
+    .heading-accent {
+      font-family: theme('fontFamily.accent');
+      @apply italic;
+    }
+  }
 </style>
 
 <style>

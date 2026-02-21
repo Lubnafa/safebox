@@ -136,31 +136,47 @@
   transform: translateY(0);
 }
 
-/* HowItWorks Image Zoom Animation */
+/* HowItWorks Image and Label Zoom Animation */
+.how-it-works-step h3 {
+  transform: scale(0.9);
+  opacity: 0;
+  transition: transform 0.8s ease-out, opacity 0.8s ease-out;
+}
+
 .how-it-works-image {
   transform: scale(0.9);
   transition: transform 0.8s ease-out;
-  animation: zoomInImage 1.2s ease-out forwards;
-  animation-delay: 0.3s;
   opacity: 0;
 }
 
-.how-it-works-step.is-visible .how-it-works-image {
-  opacity: 1;
-  transform: scale(1);
-  animation: zoomInImage 1.2s ease-out forwards;
-}
-
-.how-it-works-step[data-reveal-index="0"].is-visible .how-it-works-image {
+.how-it-works-step[data-reveal-index="0"].is-visible h3 {
+  animation: zoomInText 1s ease-out forwards;
   animation-delay: 0.2s;
 }
 
+.how-it-works-step[data-reveal-index="0"].is-visible .how-it-works-image {
+  animation: zoomInImage 1s ease-out forwards;
+  animation-delay: 0.5s;
+}
+
+.how-it-works-step[data-reveal-index="1"].is-visible h3 {
+  animation: zoomInText 1s ease-out forwards;
+  animation-delay: 0.8s;
+}
+
 .how-it-works-step[data-reveal-index="1"].is-visible .how-it-works-image {
-  animation-delay: 0.4s;
+  animation: zoomInImage 1s ease-out forwards;
+  animation-delay: 1.1s;
+}
+
+.how-it-works-step[data-reveal-index="2"].is-visible h3 {
+  animation: zoomInText 1s ease-out forwards;
+  animation-delay: 1.4s;
 }
 
 .how-it-works-step[data-reveal-index="2"].is-visible .how-it-works-image {
-  animation-delay: 0.6s;
+  animation: zoomInImage 1s ease-out forwards;
+  animation-delay: 1.7s;
 }
 
 .how-it-works-image:hover {
@@ -169,6 +185,17 @@
 }
 
 @keyframes zoomInImage {
+  0% {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes zoomInText {
   0% {
     transform: scale(0.9);
     opacity: 0;
@@ -662,6 +689,12 @@ button.faq-question.is-open .faq-icon {
   
   .flow-path animate {
     animation: none;
+  }
+  
+  .how-it-works-step h3 {
+    transform: scale(1);
+    animation: none;
+    opacity: 1;
   }
   
   .how-it-works-image {

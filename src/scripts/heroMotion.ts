@@ -12,6 +12,14 @@ export function initHeroMotion() {
 
   // Initialize animation state
   hero.setAttribute('data-animate-ready', 'false');
+  
+  // Initialize CSS variables for background flow
+  hero.style.setProperty('--px', '0px');
+  hero.style.setProperty('--py', '0px');
+  hero.style.setProperty('--bg-x', '0px');
+  hero.style.setProperty('--bg-y', '0px');
+  hero.style.setProperty('--bg-x-2', '0px');
+  hero.style.setProperty('--bg-y-2', '0px');
 
   // Trigger animations on load
   function triggerAnimations() {
@@ -46,6 +54,12 @@ export function initHeroMotion() {
 
       hero.style.setProperty('--px', `${cappedX}px`);
       hero.style.setProperty('--py', `${cappedY}px`);
+      
+      // Background flow effect - different speeds for depth (more pronounced)
+      hero.style.setProperty('--bg-x', `${cappedX * 0.5}px`);
+      hero.style.setProperty('--bg-y', `${cappedY * 0.5}px`);
+      hero.style.setProperty('--bg-x-2', `${cappedX * 0.7}px`);
+      hero.style.setProperty('--bg-y-2', `${cappedY * 0.7}px`);
 
       rafId = requestAnimationFrame(updateParallax);
     }

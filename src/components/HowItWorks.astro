@@ -4,10 +4,10 @@ import FancyHeading from './FancyHeading.astro';
 ---
 
 <section 
-  class="how-it-works py-20 md:py-24 lg:py-32 bg-gradient-to-br from-gray-50 via-white to-gray-50"
+  class="how-it-works py-20 md:py-24 lg:py-32 relative overflow-hidden bg-white"
   aria-labelledby="how-it-works"
 >
-  <div class="container mx-auto px-6 md:px-12 lg:px-16">
+  <div class="container mx-auto px-6 md:px-12 lg:px-16 relative z-10">
     <!-- Section Header -->
     <div class="text-center mb-12 md:mb-16">
       <div data-reveal>
@@ -21,129 +21,117 @@ import FancyHeading from './FancyHeading.astro';
     </div>
 
     <!-- Timeline Container with Background Panel -->
-    <div class="how-it-works-timeline bg-gray-50 rounded-2xl p-8 md:p-12 lg:p-16">
+    <div class="how-it-works-timeline rounded-2xl p-8 md:p-12 lg:p-16" style="background-color: #050d36;">
       <!-- Steps List -->
       <ol class="how-it-works-steps grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 relative">
-        <!-- Timeline Line (Desktop only) -->
-        <div 
-          class="timeline-line hidden md:block absolute top-0 left-0 right-0 h-0.5 bg-gray-300"
-          data-line-draw
-          style="top: 1.75rem;"
-        >
-          <div class="timeline-line-fill h-full bg-gray-900 origin-left"></div>
-        </div>
         <!-- Step 1 -->
         <li class="how-it-works-step relative" data-reveal-index="0">
           <div class="step-content relative">
-            <!-- Number Badge -->
-            <div class="step-badge w-12 h-12 md:w-14 md:h-14 bg-gray-900 text-white rounded-full flex items-center justify-center text-xl md:text-2xl font-bold mb-4 md:mb-0 md:absolute md:top-0 md:left-1/2 md:-translate-x-1/2 relative z-10">
-              1
-            </div>
-            <!-- Icon -->
-            <div class="step-icon mb-4 md:mt-16">
-              <svg 
-                class="w-8 h-8 text-gray-700 transition-transform duration-300"
-                fill="none" 
-                stroke="currentColor" 
-                viewBox="0 0 24 24"
-              >
-                <path 
-                  stroke-linecap="round" 
-                  stroke-linejoin="round" 
-                  stroke-width="1.5" 
-                  d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"
-                />
-                <path 
-                  stroke-linecap="round" 
-                  stroke-linejoin="round" 
-                  stroke-width="1.5" 
-                  d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
-                />
-              </svg>
-            </div>
-            <!-- Title -->
-            <h3 class="text-xl md:text-2xl font-semibold text-gray-900 mb-3">
+            <h3 class="text-xl md:text-2xl font-semibold mb-4 text-center relative z-10" style="font-family: 'Playfair Display', serif; font-style: italic; color: #5ECFFF;">
               Set it up once
             </h3>
-            <!-- Body -->
-            <p class="text-gray-700 leading-relaxed">
-              Plug it in, connect it, and you're done. No tech degree required.
-            </p>
+            <!-- Vertical dotted line from label to image -->
+            <svg class="step-connector-line absolute left-1/2 transform -translate-x-1/2 w-0.5 pointer-events-none z-0" style="top: 2.5rem; height: calc(100% - 2.5rem - 300px);" viewBox="0 0 2 200" preserveAspectRatio="none">
+              <line 
+                x1="1" 
+                y1="0" 
+                x2="1" 
+                y2="100%" 
+                stroke="#ffffff" 
+                stroke-width="2" 
+                stroke-dasharray="4,4" 
+                opacity="0.6"
+              >
+                <animate
+                  attributeName="stroke-dashoffset"
+                  values="0;8"
+                  dur="2s"
+                  repeatCount="indefinite"
+                />
+              </line>
+            </svg>
+            <img 
+              src="/set_up.png" 
+              alt="Set it up once"
+              class="how-it-works-image w-full h-auto object-contain min-h-[300px] md:min-h-[400px] relative z-10"
+            />
           </div>
         </li>
 
         <!-- Step 2 -->
         <li class="how-it-works-step relative" data-reveal-index="1">
           <div class="step-content relative">
-            <!-- Number Badge -->
-            <div class="step-badge w-12 h-12 md:w-14 md:h-14 bg-gray-900 text-white rounded-full flex items-center justify-center text-xl md:text-2xl font-bold mb-4 md:mb-0 md:absolute md:top-0 md:left-1/2 md:-translate-x-1/2 relative z-10">
-              2
-            </div>
-            <!-- Icon -->
-            <div class="step-icon mb-4 md:mt-16">
-              <svg 
-                class="w-8 h-8 text-gray-700 transition-transform duration-300"
-                fill="none" 
-                stroke="currentColor" 
-                viewBox="0 0 24 24"
-              >
-                <path 
-                  stroke-linecap="round" 
-                  stroke-linejoin="round" 
-                  stroke-width="1.5" 
-                  d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
-                />
-              </svg>
-            </div>
-            <!-- Title -->
-            <h3 class="text-xl md:text-2xl font-semibold text-gray-900 mb-3">
+            <h3 class="text-xl md:text-2xl font-semibold mb-4 text-center relative z-10" style="font-family: 'Playfair Display', serif; font-style: italic; color: #5ECFFF;">
               Talk naturally
             </h3>
-            <!-- Body -->
-            <p class="text-gray-700 leading-relaxed">
-              Ask for help with your day, your family schedule, or your business tasks.
-            </p>
+            <!-- Vertical dotted line from label to image -->
+            <svg class="step-connector-line absolute left-1/2 transform -translate-x-1/2 w-0.5 pointer-events-none z-0" style="top: 2.5rem; height: calc(100% - 2.5rem - 300px);" viewBox="0 0 2 200" preserveAspectRatio="none">
+              <line 
+                x1="1" 
+                y1="0" 
+                x2="1" 
+                y2="100%" 
+                stroke="#ffffff" 
+                stroke-width="2" 
+                stroke-dasharray="4,4" 
+                opacity="0.6"
+              >
+                <animate
+                  attributeName="stroke-dashoffset"
+                  values="0;8"
+                  dur="2s"
+                  repeatCount="indefinite"
+                  begin="0.2s"
+                />
+              </line>
+            </svg>
+            <img 
+              src="/talk.png" 
+              alt="Talk naturally"
+              class="how-it-works-image w-full h-auto object-contain min-h-[300px] md:min-h-[400px] relative z-10"
+            />
           </div>
         </li>
 
         <!-- Step 3 -->
         <li class="how-it-works-step relative" data-reveal-index="2">
           <div class="step-content relative">
-            <!-- Number Badge -->
-            <div class="step-badge w-12 h-12 md:w-14 md:h-14 bg-gray-900 text-white rounded-full flex items-center justify-center text-xl md:text-2xl font-bold mb-4 md:mb-0 md:absolute md:top-0 md:left-1/2 md:-translate-x-1/2 relative z-10">
-              3
-            </div>
-            <!-- Icon -->
-            <div class="step-icon mb-4 md:mt-16">
-              <svg 
-                class="w-8 h-8 text-gray-700 transition-transform duration-300"
-                fill="none" 
-                stroke="currentColor" 
-                viewBox="0 0 24 24"
-              >
-                <path 
-                  stroke-linecap="round" 
-                  stroke-linejoin="round" 
-                  stroke-width="1.5" 
-                  d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-                />
-              </svg>
-            </div>
-            <!-- Title -->
-            <h3 class="text-xl md:text-2xl font-semibold text-gray-900 mb-3">
+            <h3 class="text-xl md:text-2xl font-semibold mb-4 text-center relative z-10" style="font-family: 'Playfair Display', serif; font-style: italic; color: #5ECFFF;">
               Keep clear records
             </h3>
-            <!-- Body -->
-            <p class="text-gray-700 leading-relaxed">
-              When something matters, SafeBox keeps a clean "receipt" of what happened, so you can trust it later.
-            </p>
+            <!-- Vertical dotted line from label to image -->
+            <svg class="step-connector-line absolute left-1/2 transform -translate-x-1/2 w-0.5 pointer-events-none z-0" style="top: 2.5rem; height: calc(100% - 2.5rem - 300px);" viewBox="0 0 2 200" preserveAspectRatio="none">
+              <line 
+                x1="1" 
+                y1="0" 
+                x2="1" 
+                y2="100%" 
+                stroke="#ffffff" 
+                stroke-width="2" 
+                stroke-dasharray="4,4" 
+                opacity="0.6"
+              >
+                <animate
+                  attributeName="stroke-dashoffset"
+                  values="0;8"
+                  dur="2s"
+                  repeatCount="indefinite"
+                  begin="0.4s"
+                />
+              </line>
+            </svg>
+            <img 
+              src="/record.png" 
+              alt="Keep clear records"
+              class="how-it-works-image w-full h-auto object-contain min-h-[300px] md:min-h-[400px] relative z-10"
+            />
           </div>
         </li>
       </ol>
 
       <!-- Support Line -->
       <p 
-        class="text-sm text-gray-600 text-center mt-8 md:mt-12"
+        class="text-sm text-white text-center mt-8 md:mt-12"
         data-reveal
       >
         And if something goes offline, it tells you what changed.

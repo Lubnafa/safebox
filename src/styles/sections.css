@@ -136,6 +136,49 @@
   transform: translateY(0);
 }
 
+/* HowItWorks Image Zoom Animation */
+.how-it-works-image {
+  transform: scale(0.9);
+  transition: transform 0.8s ease-out;
+  animation: zoomInImage 1.2s ease-out forwards;
+  animation-delay: 0.3s;
+  opacity: 0;
+}
+
+.how-it-works-step.is-visible .how-it-works-image {
+  opacity: 1;
+  transform: scale(1);
+  animation: zoomInImage 1.2s ease-out forwards;
+}
+
+.how-it-works-step[data-reveal-index="0"].is-visible .how-it-works-image {
+  animation-delay: 0.2s;
+}
+
+.how-it-works-step[data-reveal-index="1"].is-visible .how-it-works-image {
+  animation-delay: 0.4s;
+}
+
+.how-it-works-step[data-reveal-index="2"].is-visible .how-it-works-image {
+  animation-delay: 0.6s;
+}
+
+.how-it-works-image:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease-out;
+}
+
+@keyframes zoomInImage {
+  0% {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
 /* Stagger delay for steps */
 .how-it-works-step[data-reveal-index="0"].is-visible {
   transition-delay: 0.2s;
@@ -149,62 +192,107 @@
   transition-delay: 0.6s;
 }
 
-/* Timeline Line Draw Animation */
-.timeline-line-fill {
-  transform: scaleX(0);
-  transition: transform 1.2s ease-out;
+/* Flowing Line Animation */
+.how-it-works-flow-line {
+  overflow: visible;
 }
 
-[data-line-draw].is-visible .timeline-line-fill {
-  transform: scaleX(1);
+.flow-path {
+  filter: drop-shadow(0 2px 4px rgba(4, 22, 71, 0.2));
 }
 
-/* Mobile: Show vertical layout with connector line */
+/* Label Connecting Lines */
+.how-it-works-label-lines {
+  z-index: 1;
+}
+
+.label-line-1,
+.label-line-2 {
+  filter: drop-shadow(0 1px 2px rgba(255, 255, 255, 0.3));
+}
+
+/* Vertical Connector Lines from Label to Image */
+.step-connector-line {
+  overflow: visible;
+}
+
+.step-connector-line line {
+  filter: drop-shadow(0 1px 2px rgba(255, 255, 255, 0.3));
+}
+
+/* HowItWorks Background Circles */
+.how-it-works-bg {
+  z-index: 0;
+}
+
+.how-it-works-circle-1,
+.how-it-works-circle-2,
+.how-it-works-circle-3,
+.how-it-works-circle-4,
+.how-it-works-circle-5 {
+  animation: floatCircle 20s ease-in-out infinite;
+}
+
+.how-it-works-circle-2 {
+  animation-delay: -4s;
+}
+
+.how-it-works-circle-3 {
+  animation-delay: -8s;
+}
+
+.how-it-works-circle-4 {
+  animation-delay: -2s;
+}
+
+.how-it-works-circle-5 {
+  animation-delay: -6s;
+}
+
+@keyframes floatCircle {
+  0%, 100% {
+    transform: translateY(0) translateX(0);
+  }
+  25% {
+    transform: translateY(-10px) translateX(5px);
+  }
+  50% {
+    transform: translateY(5px) translateX(-5px);
+  }
+  75% {
+    transform: translateY(-5px) translateX(10px);
+  }
+}
+
+/* Mobile: Show vertical layout */
 @media (max-width: 767px) {
   .how-it-works-steps {
     gap: 2rem;
   }
-  
-  /* Vertical connector line on mobile */
-  .how-it-works-steps::before {
-    content: '';
-    position: absolute;
-    left: 1.5rem;
-    top: 0;
-    bottom: 0;
-    width: 2px;
-    background: linear-gradient(to bottom, 
-      transparent 0%, 
-      transparent 10%, 
-      #d1d5db 10%, 
-      #d1d5db 90%, 
-      transparent 90%, 
-      transparent 100%);
-    z-index: 0;
-  }
-  
-  .step-badge {
-    position: relative;
-    z-index: 10;
-  }
 }
 
-/* Desktop: Show horizontal timeline */
+/* Desktop: Show horizontal layout */
 @media (min-width: 768px) {
   .how-it-works-steps {
-    padding-top: 3.5rem;
+    padding-top: 0;
   }
   
-  /* Position badges on the timeline */
   .how-it-works-step {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    text-align: center;
+    position: relative;
+    z-index: 1;
   }
   
   .step-content {
     width: 100%;
+    height: 100%;
+  }
+  
+  .step-card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
   }
 }
 
@@ -463,6 +551,53 @@ button.faq-question.is-open .faq-icon {
   border-color: #111827;
 }
 
+/* WhatIsSafeBox Background Card */
+.what-is-card-bg {
+  z-index: 0;
+  top: 2rem;
+  bottom: 2rem;
+  left: 0;
+  right: 0;
+}
+
+.what-is-card-panel {
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 4px 6px -1px rgba(4, 22, 71, 0.1), 0 2px 4px -1px rgba(4, 22, 71, 0.06);
+}
+
+.what-is-content-wrapper {
+  min-height: 100%;
+}
+
+/* WhatIsSafeBox Wavy Background Animation */
+.what-is-waves {
+  z-index: 0;
+}
+
+.what-is-wave-1,
+.what-is-wave-2,
+.what-is-wave-3 {
+  animation: waveFloat 15s ease-in-out infinite;
+}
+
+.what-is-wave-2 {
+  animation-delay: -2s;
+}
+
+.what-is-wave-3 {
+  animation-delay: -4s;
+}
+
+@keyframes waveFloat {
+  0%, 100% {
+    transform: translateX(0) translateY(0);
+  }
+  50% {
+    transform: translateX(-20px) translateY(10px);
+  }
+}
+
 /* Reduced motion support */
 @media (prefers-reduced-motion: reduce) {
   .why-card {
@@ -521,9 +656,31 @@ button.faq-question.is-open .faq-icon {
     transition: none;
   }
   
-  .timeline-line-fill {
-    transform: scaleX(1);
-    transition: none;
+  .flow-path {
+    animation: none;
+  }
+  
+  .flow-path animate {
+    animation: none;
+  }
+  
+  .how-it-works-image {
+    transform: scale(1);
+    animation: none;
+    opacity: 1;
+  }
+  
+  .how-it-works-image:hover {
+    transform: scale(1);
+  }
+  
+  .label-line-1 animate,
+  .label-line-2 animate {
+    animation: none;
+  }
+  
+  .step-connector-line animate {
+    animation: none;
   }
   
   .step-icon:hover svg {
@@ -598,6 +755,13 @@ button.faq-question.is-open .faq-icon {
 
   .faq-question.is-open .faq-icon {
     transform: none;
+  }
+  
+  /* WhatIsSafeBox reduced motion */
+  .what-is-wave-1,
+  .what-is-wave-2,
+  .what-is-wave-3 {
+    animation: none;
   }
 }
 

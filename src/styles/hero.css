@@ -5,6 +5,96 @@
   --py: 0px;
 }
 
+/* Background Patterns */
+.hero-background-patterns {
+  z-index: 0;
+  transition: transform 0.1s ease-out;
+}
+
+.hero-geometric-lines {
+  z-index: 1;
+  animation: floatPattern 20s ease-in-out infinite;
+  transform: translate(
+    calc(var(--bg-x, 0px) * 0.8),
+    calc(var(--bg-y, 0px) * 0.8)
+  );
+  transition: transform 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hero-patterns-center {
+  z-index: 1;
+  animation: floatPatternReverse 25s ease-in-out infinite;
+  transform: translate(
+    calc(var(--bg-x-2, 0px) * 0.6),
+    calc(var(--bg-y-2, 0px) * 0.6)
+  );
+  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hero-pattern-diagonal,
+.hero-pattern-hex,
+.hero-pattern-wave,
+.hero-pattern-dots {
+  z-index: 1;
+  animation: floatPattern 30s ease-in-out infinite;
+  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Floating animation for background patterns */
+@keyframes floatPattern {
+  0%, 100% {
+    transform: translate(
+      calc(var(--bg-x, 0px) * 0.8 + 0px),
+      calc(var(--bg-y, 0px) * 0.8 + 0px)
+    );
+  }
+  25% {
+    transform: translate(
+      calc(var(--bg-x, 0px) * 0.8 + 15px),
+      calc(var(--bg-y, 0px) * 0.8 + -10px)
+    );
+  }
+  50% {
+    transform: translate(
+      calc(var(--bg-x, 0px) * 0.8 + -10px),
+      calc(var(--bg-y, 0px) * 0.8 + 15px)
+    );
+  }
+  75% {
+    transform: translate(
+      calc(var(--bg-x, 0px) * 0.8 + -15px),
+      calc(var(--bg-y, 0px) * 0.8 + -5px)
+    );
+  }
+}
+
+@keyframes floatPatternReverse {
+  0%, 100% {
+    transform: translate(
+      calc(var(--bg-x-2, 0px) * 0.6 + 0px),
+      calc(var(--bg-y-2, 0px) * 0.6 + 0px)
+    );
+  }
+  25% {
+    transform: translate(
+      calc(var(--bg-x-2, 0px) * 0.6 + -12px),
+      calc(var(--bg-y-2, 0px) * 0.6 + 8px)
+    );
+  }
+  50% {
+    transform: translate(
+      calc(var(--bg-x-2, 0px) * 0.6 + 8px),
+      calc(var(--bg-y-2, 0px) * 0.6 + -12px)
+    );
+  }
+  75% {
+    transform: translate(
+      calc(var(--bg-x-2, 0px) * 0.6 + 12px),
+      calc(var(--bg-y-2, 0px) * 0.6 + 5px)
+    );
+  }
+}
+
 /* Animation states - elements start hidden/transformed */
 .hero[data-animate-ready="false"] .hero-logo,
 .hero[data-animate-ready="false"] [data-animate="logo"] {
@@ -181,5 +271,16 @@
   
   .hero-cta-primary::before {
     display: none;
+  }
+  
+  .hero-geometric-lines,
+  .hero-patterns-center,
+  .hero-pattern-diagonal,
+  .hero-pattern-hex,
+  .hero-pattern-wave,
+  .hero-pattern-dots {
+    transform: none;
+    transition: none;
+    animation: none;
   }
 }

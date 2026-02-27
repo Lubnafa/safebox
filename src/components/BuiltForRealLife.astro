@@ -21,7 +21,27 @@ import FancyHeading from './FancyHeading.astro';
     <!-- Carousel Container -->
     <div class="built-for-tabs-container max-w-4xl mx-auto">
       <!-- Panel Container -->
-      <div class="built-for-panels relative min-h-[400px] overflow-hidden">
+      <div class="built-for-panels relative min-h-[400px] overflow-hidden" tabindex="0">
+        <!-- Navigation Arrows -->
+        <button
+          class="built-for-nav-arrow built-for-nav-prev absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-white/90 hover:bg-white text-gray-900 rounded-full p-3 shadow-lg transition-all duration-200 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-gray-900 focus:ring-offset-2"
+          aria-label="Previous card"
+          data-carousel-prev
+        >
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+          </svg>
+        </button>
+        <button
+          class="built-for-nav-arrow built-for-nav-next absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-white/90 hover:bg-white text-gray-900 rounded-full p-3 shadow-lg transition-all duration-200 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-gray-900 focus:ring-offset-2"
+          aria-label="Next card"
+          data-carousel-next
+        >
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </button>
+        
         <div class="built-for-carousel-track">
           <!-- Panel 1: Small Business -->
           <div
@@ -232,217 +252,6 @@ import FancyHeading from './FancyHeading.astro';
               </ul>
             </div>
           </div>
-
-          <!-- Duplicate panels for seamless loop -->
-          <!-- Panel 1: Small Business (Duplicate) -->
-          <div
-            class="built-for-panel rounded-xl border border-gray-200 p-8 md:p-10 relative bg-cover bg-center bg-no-repeat"
-            style="background-image: url('/business.png'); --bg-image: url('/business.png')"
-            data-panel="small-business"
-          >
-            <div class="absolute inset-0 bg-black/30 rounded-xl backdrop-blur-[1px]"></div>
-            <div class="relative z-10 text-white">
-              <h3 class="text-2xl md:text-3xl font-semibold mb-4">
-                Stop losing leads because you were busy working.
-              </h3>
-              <p class="text-lg md:text-xl leading-relaxed mb-6">
-                SafeBox helps you stay on top of customers without living on your phone. It can draft messages, keep job notes organized, and help you respond faster, while you stay in control.
-              </p>
-              <ul class="space-y-3">
-                <li class="flex items-start gap-3">
-                  <svg 
-                    class="w-5 h-5 text-white mt-0.5 flex-shrink-0"
-                    fill="none" 
-                    stroke="currentColor" 
-                    viewBox="0 0 24 24"
-                    aria-hidden="true"
-                  >
-                    <path 
-                      stroke-linecap="round" 
-                      stroke-linejoin="round" 
-                      stroke-width="2" 
-                      d="M5 13l4 4L19 7"
-                    />
-                  </svg>
-                  <span class="text-white">Draft replies and estimates you can review</span>
-                </li>
-                <li class="flex items-start gap-3">
-                  <svg 
-                    class="w-5 h-5 text-white mt-0.5 flex-shrink-0"
-                    fill="none" 
-                    stroke="currentColor" 
-                    viewBox="0 0 24 24"
-                    aria-hidden="true"
-                  >
-                    <path 
-                      stroke-linecap="round" 
-                      stroke-linejoin="round" 
-                      stroke-width="2" 
-                      d="M5 13l4 4L19 7"
-                    />
-                  </svg>
-                  <span class="text-white">Track job notes and details in one place</span>
-                </li>
-                <li class="flex items-start gap-3">
-                  <svg 
-                    class="w-5 h-5 text-white mt-0.5 flex-shrink-0"
-                    fill="none" 
-                    stroke="currentColor" 
-                    viewBox="0 0 24 24"
-                    aria-hidden="true"
-                  >
-                    <path 
-                      stroke-linecap="round" 
-                      stroke-linejoin="round" 
-                      stroke-width="2" 
-                      d="M5 13l4 4L19 7"
-                    />
-                  </svg>
-                  <span class="text-white">Stay responsive even when you're in the field</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <!-- Panel 2: Families (Duplicate) -->
-          <div
-            class="built-for-panel rounded-xl border border-gray-200 p-8 md:p-10 relative bg-cover bg-center bg-no-repeat"
-            style="background-image: url('/family_1.png'); --bg-image: url('/family_1.png')"
-            data-panel="families"
-          >
-            <div class="absolute inset-0 bg-black/30 rounded-xl backdrop-blur-[1px]"></div>
-            <div class="relative z-10 text-white">
-              <h3 class="text-2xl md:text-3xl font-semibold mb-4">
-                A calmer assistant for the home.
-              </h3>
-              <p class="text-lg md:text-xl leading-relaxed mb-6">
-                SafeBox is designed to feel safe around family life, predictable, clear, and private.
-              </p>
-              <ul class="space-y-3">
-                <li class="flex items-start gap-3">
-                  <svg 
-                    class="w-5 h-5 text-white mt-0.5 flex-shrink-0"
-                    fill="none" 
-                    stroke="currentColor" 
-                    viewBox="0 0 24 24"
-                    aria-hidden="true"
-                  >
-                    <path 
-                      stroke-linecap="round" 
-                      stroke-linejoin="round" 
-                      stroke-width="2" 
-                      d="M5 13l4 4L19 7"
-                    />
-                  </svg>
-                  <span class="text-white">Kid-safe defaults and clear boundaries</span>
-                </li>
-                <li class="flex items-start gap-3">
-                  <svg 
-                    class="w-5 h-5 text-white mt-0.5 flex-shrink-0"
-                    fill="none" 
-                    stroke="currentColor" 
-                    viewBox="0 0 24 24"
-                    aria-hidden="true"
-                  >
-                    <path 
-                      stroke-linecap="round" 
-                      stroke-linejoin="round" 
-                      stroke-width="2" 
-                      d="M5 13l4 4L19 7"
-                    />
-                  </svg>
-                  <span class="text-white">Help even during internet outages</span>
-                </li>
-                <li class="flex items-start gap-3">
-                  <svg 
-                    class="w-5 h-5 text-white mt-0.5 flex-shrink-0"
-                    fill="none" 
-                    stroke="currentColor" 
-                    viewBox="0 0 24 24"
-                    aria-hidden="true"
-                  >
-                    <path 
-                      stroke-linecap="round" 
-                      stroke-linejoin="round" 
-                      stroke-width="2" 
-                      d="M5 13l4 4L19 7"
-                    />
-                  </svg>
-                  <span class="text-white">Less random behavior and confusion</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <!-- Panel 3: Power Users (Duplicate) -->
-          <div
-            class="built-for-panel rounded-xl border border-gray-200 p-8 md:p-10 relative bg-cover bg-center bg-no-repeat"
-            style="background-image: url('/users.png'); --bg-image: url('/users.png')"
-            data-panel="power-users"
-          >
-            <div class="absolute inset-0 bg-black/30 rounded-xl backdrop-blur-[1px]"></div>
-            <div class="relative z-10 text-white">
-              <h3 class="text-2xl md:text-3xl font-semibold mb-4">
-                More leverage. Less babysitting.
-              </h3>
-              <p class="text-lg md:text-xl leading-relaxed mb-6">
-                If you use GPT every day, you already know the pain: confident wrong answers, lost context, and inconsistent behavior. SafeBox is built to reduce that load.
-              </p>
-              <ul class="space-y-3">
-                <li class="flex items-start gap-3">
-                  <svg 
-                    class="w-5 h-5 text-white mt-0.5 flex-shrink-0"
-                    fill="none" 
-                    stroke="currentColor" 
-                    viewBox="0 0 24 24"
-                    aria-hidden="true"
-                  >
-                    <path 
-                      stroke-linecap="round" 
-                      stroke-linejoin="round" 
-                      stroke-width="2" 
-                      d="M5 13l4 4L19 7"
-                    />
-                  </svg>
-                  <span class="text-white">Clear uncertainty when something isn't known</span>
-                </li>
-                <li class="flex items-start gap-3">
-                  <svg 
-                    class="w-5 h-5 text-white mt-0.5 flex-shrink-0"
-                    fill="none" 
-                    stroke="currentColor" 
-                    viewBox="0 0 24 24"
-                    aria-hidden="true"
-                  >
-                    <path 
-                      stroke-linecap="round" 
-                      stroke-linejoin="round" 
-                      stroke-width="2" 
-                      d="M5 13l4 4L19 7"
-                    />
-                  </svg>
-                  <span class="text-white">More consistency across sessions</span>
-                </li>
-                <li class="flex items-start gap-3">
-                  <svg 
-                    class="w-5 h-5 text-white mt-0.5 flex-shrink-0"
-                    fill="none" 
-                    stroke="currentColor" 
-                    viewBox="0 0 24 24"
-                    aria-hidden="true"
-                  >
-                    <path 
-                      stroke-linecap="round" 
-                      stroke-linejoin="round" 
-                      stroke-width="2" 
-                      d="M5 13l4 4L19 7"
-                    />
-                  </svg>
-                  <span class="text-white">Less prompt repetition and re-explaining</span>
-                </li>
-              </ul>
-            </div>
-          </div>
         </div>
       </div>
     </div>
@@ -452,4 +261,81 @@ import FancyHeading from './FancyHeading.astro';
 <style>
   @import '../styles/sections.css';
 </style>
+
+<script>
+  function initBuiltForRealLifeCarousel() {
+    const container = document.querySelector('.built-for-panels');
+    const track = document.querySelector('.built-for-carousel-track');
+    const panels = Array.from(document.querySelectorAll('.built-for-panel'));
+    const prevButton = document.querySelector('[data-carousel-prev]');
+    const nextButton = document.querySelector('[data-carousel-next]');
+    
+    if (!container || !track || panels.length === 0 || !prevButton || !nextButton) return;
+    
+    let currentIndex = 0;
+    const totalPanels = panels.length;
+    
+    const updateCarousel = () => {
+      const offset = -currentIndex * 100;
+      track.style.transform = `translateX(${offset}%)`;
+      
+      // Update button states
+      prevButton.setAttribute('aria-disabled', currentIndex === 0 ? 'true' : 'false');
+      nextButton.setAttribute('aria-disabled', currentIndex === totalPanels - 1 ? 'true' : 'false');
+      
+      // Visual feedback for disabled state
+      if (currentIndex === 0) {
+        prevButton.classList.add('opacity-50', 'cursor-not-allowed');
+        prevButton.classList.remove('hover:scale-110');
+      } else {
+        prevButton.classList.remove('opacity-50', 'cursor-not-allowed');
+        prevButton.classList.add('hover:scale-110');
+      }
+      
+      if (currentIndex === totalPanels - 1) {
+        nextButton.classList.add('opacity-50', 'cursor-not-allowed');
+        nextButton.classList.remove('hover:scale-110');
+      } else {
+        nextButton.classList.remove('opacity-50', 'cursor-not-allowed');
+        nextButton.classList.add('hover:scale-110');
+      }
+    };
+    
+    prevButton.addEventListener('click', () => {
+      if (currentIndex > 0) {
+        currentIndex--;
+        updateCarousel();
+      }
+    });
+    
+    nextButton.addEventListener('click', () => {
+      if (currentIndex < totalPanels - 1) {
+        currentIndex++;
+        updateCarousel();
+      }
+    });
+    
+    // Keyboard navigation
+    container.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowLeft' && currentIndex > 0) {
+        currentIndex--;
+        updateCarousel();
+      } else if (e.key === 'ArrowRight' && currentIndex < totalPanels - 1) {
+        currentIndex++;
+        updateCarousel();
+      }
+    });
+    
+    // Initialize
+    updateCarousel();
+  }
+  
+  if (typeof window !== 'undefined') {
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initBuiltForRealLifeCarousel);
+    } else {
+      initBuiltForRealLifeCarousel();
+    }
+  }
+</script>
 

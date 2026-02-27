@@ -362,7 +362,7 @@
 .built-for-carousel-track {
   display: flex;
   gap: 0;
-  animation: carousel-scroll 30s linear infinite;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   will-change: transform;
 }
 
@@ -391,18 +391,15 @@
   position: relative;
 }
 
-@keyframes carousel-scroll {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-300%);
-  }
+/* Navigation arrow styles */
+.built-for-nav-arrow {
+  opacity: 1;
 }
 
-/* Pause animation on hover */
-.built-for-panels:hover .built-for-carousel-track {
-  animation-play-state: paused;
+.built-for-nav-arrow[aria-disabled="true"] {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
 }
 
 /* Reduced motion support */
@@ -780,20 +777,15 @@ button.faq-question.is-open .faq-icon {
   }
 
   /* BuiltForRealLife reduced motion */
-  .built-for-tab-underline {
+  .built-for-carousel-track {
     transition: none;
   }
-
-  .built-for-tab:hover:not([aria-selected="true"]) {
-    transform: none;
-  }
-
-  .built-for-panel {
+  
+  .built-for-nav-arrow {
     transition: none;
   }
-
-  .built-for-panel:not(.active) {
-    opacity: 0;
+  
+  .built-for-nav-arrow:hover {
     transform: none;
   }
 
